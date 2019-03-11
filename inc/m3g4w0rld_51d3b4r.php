@@ -1,6 +1,11 @@
+<?php
+// URL LINK
+// $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+$file_name_link = basename($_SERVER['REQUEST_URI'], '?' . $_SERVER['QUERY_STRING']);
+?>
 <ul class="nav nav-list">
-  <li class="active">
-    <a href="index.php">
+  <li class="<?php if($file_name_link === "index.php") { echo "active"; }?>">
+    <a href="../index.php">
       <i class="menu-icon fa fa-tachometer"></i>
       <span class="menu-text"> Home </span>
     </a>
@@ -35,7 +40,7 @@
   </li>
 
 
-  <li class="">
+  <li class="<?php if($file_name_link === "m3g4w0rld_1nv3nt0ry.php") { echo "active"; }?>">
     <a href="components/m3g4w0rld_1nv3nt0ry.php">
       <i class="menu-icon fa fa-list"></i>
       <span class="menu-text"> Inventory </span>

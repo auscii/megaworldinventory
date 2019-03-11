@@ -16,7 +16,7 @@ include("../inc/m3g4w0rld_c0mm0n.php");
 		<link rel="stylesheet" href="../assets/css/ace.min.css" class="ace-main-stylesheet" id="main-ace-style" />
 		<link rel="stylesheet" href="../assets/css/ace-skins.min.css" />
 		<link rel="stylesheet" href="../assets/css/ace-rtl.min.css" />
-		<link rel="stylesheet" href="../assets/css/style.css" />
+		<!-- <link rel="stylesheet" href="../assets/css/style.css" /> -->
 		<script src="../assets/js/ace-extra.min.js"></script>
 	</head>
 
@@ -58,76 +58,58 @@ include("../inc/m3g4w0rld_c0mm0n.php");
 
 					<div class="page-content">
 
-
-						<div class="page-header">
-							<h1>
-								Home
-								<small>
-									<i class="ace-icon fa fa-angle-double-right"></i>
-									overview &amp; stats
-								</small>
-							</h1>
-						</div><!-- /.page-header -->
-
 						<div class="row">
 							<div class="col-xs-12">
-								<!-- PAGE CONTENT BEGINS -->
-								<div class="alert alert-block alert-success">
-									<button type="button" class="close" data-dismiss="alert">
-										<i class="ace-icon fa fa-times"></i>
-									</button>
+								<h3 class="header smaller lighter blue">Employees Inventory</h3>
 
-									<i class="ace-icon fa fa-check green"></i>
+											<div class="clearfix">
+												<div class="pull-right tableTools-container"></div>
+											</div>
 
-									Welcome to
-									<strong class="green">
-										Megaworld Inventory
-										<small>(v1.0)</small>
-									</strong>
-                </div>
+											<table id="dynamic-table" class="table table-striped table-bordered table-hover">
 
-								<div class="row">
-									<div class="space-6"></div>
+												<thead>
+													<tr>
+														<th class="center">#</th>
+														<th class="text-center">Domain</th>
+														<th class="text-center">Price</th>
+														<th class="text-center hidden-480">Clicks</th>
+														<th class="text-center">Update</th>
+														<th class="hidden-480 text-center">Status</th>
+														<th class="text-center">Action</th>
+													</tr>
+												</thead>
 
-									<div class="col-sm-7 infobox-container index-container-center">
+												<tbody>
+													<tr>
+														<td class="center"><label class="pos-rel">1</label></td>
+														<td class="text-center">app.com</td>
+														<td class="text-center">$45</td>
+														<td class="text-center hidden-480">3,330</td>
+														<td class="text-center">Feb 12</td>
+														<td class="text-center hidden-480"><span class="label label-sm label-warning">Expiring</span></td>
+														<td class="text-center">
+															<div class="hidden-sm hidden-xs action-buttons">
+																<a class="blue" href="#" title="View">
+																	<i class="ace-icon fa fa-search-plus bigger-130"></i>
+																</a>
+																<a class="green" href="#" title="Edit">
+																	<i class="ace-icon fa fa-pencil bigger-130"></i>
+																</a>
+																<a class="red" href="#" title="Delete">
+																	<i class="ace-icon fa fa-trash-o bigger-130"></i>
+																</a>
+															</div>
+														</td>
+													</tr>
+												</tbody>
 
-                    <a href="#">
-                      <div class="infobox infobox-green">
-    											<div class="infobox-icon">
-    												<i class="ace-icon fa fa-users"></i>
-    											</div>
-    											<div class="infobox-data">
-    												<span class="infobox-data-number">32</span>
-    												<div class="infobox-content"> New Users</div>
-    											</div>
-  										 </div>
-                     </a>
+											</table>
+									</div>
+								</div>
+							</div>
 
-	                  <a href="#">
-									    <div class="infobox infobox-blue">
-  											<div class="infobox-icon">
-  												<i class="ace-icon fa fa-users"></i>
-  											</div>
 
-                        <div class="infobox-data">
-  												<span class="infobox-data-number">11</span>
-  												<div class="infobox-content"> New Employees</div>
-											  </div>
-									    </div>
-                    </a>
-
-                    <a href="#">
-    										<div class="infobox infobox-pink">
-    											<div class="infobox-icon">
-    												<i class="ace-icon fa fa-bell"></i>
-    											</div>
-
-    											<div class="infobox-data">
-    												<span class="infobox-data-number">8</span>
-    												<div class="infobox-content"> New Approval</div>
-    											</div>
-    										</div>
-                     </a>
 
 										<div class="space-6"></div>
 									</div>
