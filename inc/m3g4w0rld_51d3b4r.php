@@ -1,10 +1,10 @@
 <?php
-// URL LINK
-// $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-$file_name_link = basename($_SERVER['REQUEST_URI'], '?' . $_SERVER['QUERY_STRING']);
+// $url_link = $_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF']);
+// $file_name = basename($_SERVER['REQUEST_URI'], '?' . $_SERVER['QUERY_STRING']);
 ?>
 <ul class="nav nav-list">
-  <li class="<?php if($file_name_link === "index.php") { echo "active"; }?>">
+  <?php //if($full_path === $current_path_index) { echo "active"; }?>
+  <li class="">
     <a href="../index.php">
       <i class="menu-icon fa fa-tachometer"></i>
       <span class="menu-text"> Home </span>
@@ -12,6 +12,7 @@ $file_name_link = basename($_SERVER['REQUEST_URI'], '?' . $_SERVER['QUERY_STRING
     <b class="arrow"></b>
   </li>
 
+    <?php echo $full_path; ?>
   <li class="">
     <a href="#" class="dropdown-toggle">
       <i class="menu-icon fa fa-users"></i>
@@ -40,7 +41,7 @@ $file_name_link = basename($_SERVER['REQUEST_URI'], '?' . $_SERVER['QUERY_STRING
   </li>
 
 
-  <li class="<?php if($file_name_link === "m3g4w0rld_1nv3nt0ry.php") { echo "active"; }?>">
+  <li class="">
     <a href="components/m3g4w0rld_1nv3nt0ry.php">
       <i class="menu-icon fa fa-list"></i>
       <span class="menu-text"> Inventory </span>

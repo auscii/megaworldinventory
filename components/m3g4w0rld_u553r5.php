@@ -1,5 +1,6 @@
 <?php
 include("../inc/m3g4w0rld_c0mm0n.php");
+include("val/m3g4w0rld_u553r5_v4l.php");
 ?>
 
 <!DOCTYPE html>
@@ -50,7 +51,7 @@ include("../inc/m3g4w0rld_c0mm0n.php");
 				    <b class="arrow"></b>
 				  </li>
 
-				  <li class="">
+				  <li class="active">
 				    <a href="#" class="dropdown-toggle">
 				      <i class="menu-icon fa fa-users"></i>
 				      <span class="menu-text"> Users </span>
@@ -59,7 +60,7 @@ include("../inc/m3g4w0rld_c0mm0n.php");
 				    <b class="arrow"></b>
 
 				    <ul class="submenu">
-				      <li class="">
+				      <li class="active">
 				        <a href="m3g4w0rld_u553r5.php">
 				          <i class="menu-icon fa fa-user"></i>
 				          Users Masterfile
@@ -78,7 +79,7 @@ include("../inc/m3g4w0rld_c0mm0n.php");
 				  </li>
 
 
-				  <li class="active">
+				  <li class="">
 				    <a href="m3g4w0rld_1nv3nt0ry.php">
 				      <i class="menu-icon fa fa-list"></i>
 				      <span class="menu-text"> Inventory </span>
@@ -136,99 +137,102 @@ include("../inc/m3g4w0rld_c0mm0n.php");
                 <a href="#">Home</a>
               </li>
 						</ul><!-- /.breadcrumb -->
-
 					</div>
 
 					<div class="page-content">
 						<div class="row">
 							<div class="col-xs-12">
-								<h3 class="header smaller lighter blue">Employees Inventory</h3>
+								<h3 class="header smaller lighter blue">Users Masterfile</h3>
 
 								<div class="clearfix">
 									<div class="pull-right tableTools-container"></div>
 								</div>
 
-								<div class="col-xs-12 col-sm-11 col-md-10">
-										<div class="input-group">
-											<input type="text" class="form-control" name="keywords" placeholder="Look within results">
-											<div class="input-group-btn">
-												<button type="button" class="btn btn-default no-border btn-sm">
-													<i class="ace-icon fa fa-search icon-on-right bigger-20"></i>
-												</button>
-											</div>
-										</div>
-								</div>
+								<!-- <a href="#" class="btn btn-default btn-app radius-4">
+									<i class="ace-icon fa fa-cog bigger-230"></i>
+									Default
+									<span class="badge badge-pink">+3</span>
+								</a> -->
 
-											<table id="dynamic-table" class="table table-striped table-bordered table-hover">
+								<a href="#my-modal" onclick="addUsers();" role="button" data-toggle="modal" class="btn btn-app btn-success">
+									<i class="ace-icon fa fa-plus bigger-230"></i>
+									Add New
+								</a>
+
+								<a onclick='window.location.reload();' class="btn btn-app btn-primary">
+									<i class="ace-icon fa fa-refresh bigger-230"></i>
+									Refresh
+								</a>
+
+											<table id="dynamic-table" class="table table-striped table-bordered table-hover text-top-1x">
 												<thead>
 													<tr>
-														<th class="center">#</th>
-														<th class="text-center">Domain</th>
-														<th class="text-center">Price</th>
-														<th class="text-center hidden-480">Clicks</th>
-														<th class="text-center">Update</th>
-														<th class="hidden-480 text-center">Status</th>
+														<th class="text-center">#</th>
+														<th class="text-center">Fullname</th>
+														<th class="text-center">Email Address</th>
+														<th class="text-center">Contact number</th>
+														<th class="text-center">Active</th>
+														<th class="text-center">Date Registered</th>
 														<th class="text-center">Action</th>
 													</tr>
 												</thead>
 
 												<tbody>
+													<?php
+											    $m3g4w0rld_u553r5_c0unt = 0;
+											    $xcon->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+											    $result = $xcon->prepare("SELECT * FROM u553r5");
+											    $result->execute();
+											        while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+											               $m3g4w0rld_u553r5_c0unt++;
+											               $m3g4w0rld_u553r5_id = $row['u553r5_id'];
+											               $m3g4w0rld_u553r5_fname = $row['u553r5_fname'];
+											               $m3g4w0rld_u553r5_lname = $row['u553r5_lname'];
+											               $m3g4w0rld_u553r5_mname = $row['u553r5_mname'];
+											               $m3g4w0rld_u553r5_email = $row['u553r5_email'];
+											               $m3g4w0rld_u553r5_contact = $row['u553r5_contact'];
+											               $m3g4w0rld_u553r5_active = $row['u553r5_active'];
+											               $m3g4w0rld_u553r5_date = $row['u553r5_date'];
+											    ?>
 													<tr>
-														<td class="center"><label class="pos-rel">1</label></td>
-														<td class="text-center">app.com</td>
-														<td class="text-center">$45</td>
-														<td class="text-center hidden-480">3,330</td>
-														<td class="text-center">Feb 12</td>
-														<td class="text-center hidden-480"><span class="label label-sm label-warning">Expiring</span></td>
+														<td class="center"><label class="pos-rel"><?php echo $m3g4w0rld_u553r5_c0unt; ?></label></td>
+														<td class="text-center"><?php echo $m3g4w0rld_u553r5_fname. " " . $m3g4w0rld_u553r5_mname . " " . $m3g4w0rld_u553r5_lname; ?></td>
+														<td class="text-center"><?php echo $m3g4w0rld_u553r5_email; ?></td>
+														<td class="text-center"><?php echo $m3g4w0rld_u553r5_contact; ?></td>
+														<td class="text-center">
+																<?php
+																if ($m3g4w0rld_u553r5_active === "1") {
+																	  echo '<span class="label label-success"><i class="fa fa-check"></i> ACTIVE</span>';
+																} else {
+																		echo '<span class="label label-danger"><i class="fa fa-exclamation-circle"></i> INACTIVE</span>';
+																}
+																?>
+														</td>
+														<td class="text-center"><?php echo $m3g4w0rld_u553r5_date; ?></td>
 														<td class="text-center">
 															<div class="hidden-sm hidden-xs action-buttons">
-																<a class="blue" href="#" title="View">
-																	<i class="ace-icon fa fa-search-plus bigger-130"></i>
-																</a>
-																<a class="green" href="#" title="Edit">
+																<a class="green" title="Edit"
+															     href="#my-modal" role="button" data-toggle="modal"
+															   	 onclick="editUsers('<?php echo $row['u553r5_id'] ; ?>',
+																											'<?php echo $row['u553r5_fname'] ?>',
+																											'<?php echo $row['u553r5_lname'] ?>',
+																											'<?php echo $row['u553r5_mname'] ?>',
+																											'<?php echo $row['u553r5_email'] ?>',
+																											'<?php echo $row['u553r5_contact'] ?>');"
+																>
 																	<i class="ace-icon fa fa-pencil bigger-130"></i>
 																</a>
-																<a class="red" href="#" title="Delete">
+																<a class="red" title="Delete"
+																	 href="#delete-modal" role="button" data-toggle="modal"
+															   	 onclick="deleteUsers('<?php echo $row['u553r5_id'] ?>');"
+																	 >
 																	<i class="ace-icon fa fa-trash-o bigger-130"></i>
 																</a>
 															</div>
 
-															<div class="hidden-md hidden-lg">
-																<div class="inline pos-rel">
-																	<button class="btn btn-minier btn-yellow dropdown-toggle" data-toggle="dropdown" data-position="auto">
-																		<i class="ace-icon fa fa-caret-down icon-only bigger-120"></i>
-																	</button>
-
-																		<ul class="dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close">
-																			<li>
-																				<a href="#" class="tooltip-info" data-rel="tooltip" title="View">
-																					<span class="blue">
-																						<i class="ace-icon fa fa-search-plus bigger-120"></i>
-																					</span>
-																				</a>
-																			</li>
-
-																			<li>
-																				<a href="#" class="tooltip-success" data-rel="tooltip" title="Edit">
-																					<span class="green">
-																						<i class="ace-icon fa fa-pencil-square-o bigger-120"></i>
-																					</span>
-																				</a>
-																			</li>
-
-																			<li>
-																				<a href="#" class="tooltip-error" data-rel="tooltip" title="Delete">
-																					<span class="red">
-																						<i class="ace-icon fa fa-trash-o bigger-120"></i>
-																					</span>
-																				</a>
-																			</li>
-																		</ul>
-
-																</div>
-															</div>
 														</td>
 													</tr>
+												<?php } ?>
 
 												</tbody>
 											</table>
@@ -284,6 +288,161 @@ include("../inc/m3g4w0rld_c0mm0n.php");
 				<i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
 			</a>
 		</div><!-- /.main-container -->
+
+
+
+<div id="my-modal" class="modal fade" tabindex="-1">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h3 class="smaller lighter blue no-margin" id="m3g4w0rld_u553r5_m0d4l_label"></h3>
+			</div>
+
+			<form method="POST">
+
+				<input type="hidden" name="m3g4w0rld_5t4tu5" id="m3g4w0rld_5t4tu5" />
+				<input type="hidden" name="u553r5_key" id="u553r5_key" />
+
+					<div class="modal-body" style="margin: auto; text-align: center;">
+							<div class="form-group has-info">
+								<label for="inputInfo" class="col-xs-12 col-sm-3 control-label no-padding-right">First Name</label>
+								<div class="col-xs-12 col-sm-5">
+									<span class="block input-icon input-icon-right">
+										<input type="text" id="u553r5_fname" name="u553r5_fname" placeholder="Enter First Name" style="width: 350px;" required />
+									</span>
+								</div>
+								<div class="help-block col-xs-12 col-sm-reset inline"> </div>
+							</div> <br />
+
+							<div class="form-group has-info">
+								<label for="inputInfo" class="col-xs-12 col-sm-3 control-label no-padding-right">Last Name</label>
+								<div class="col-xs-12 col-sm-5">
+									<span class="block input-icon input-icon-right">
+										<input type="text" id="u553r5_lname" name="u553r5_lname" placeholder="Enter Last Name" style="width: 350px;" required  />
+									</span>
+								</div>
+								<div class="help-block col-xs-12 col-sm-reset inline"> </div>
+							</div> <br />
+
+							<div class="form-group has-info">
+								<label for="inputInfo" class="col-xs-12 col-sm-3 control-label no-padding-right">Middle Name</label>
+								<div class="col-xs-12 col-sm-5">
+									<span class="block input-icon input-icon-right">
+										<input type="text" id="u553r5_mname" name="u553r5_mname" placeholder="Enter Middle Name" style="width: 350px;" required />
+									</span>
+								</div>
+								<div class="help-block col-xs-12 col-sm-reset inline"> </div>
+							</div> <br />
+
+							<div class="form-group has-info">
+								<label for="inputInfo" class="col-xs-12 col-sm-3 control-label no-padding-right">Email Address</label>
+								<div class="col-xs-12 col-sm-5">
+									<span class="block input-icon input-icon-right">
+										<input type="email" id="u553r5_email" name="u553r5_email" placeholder="Enter Email Address" style="width: 350px;" required />
+									</span>
+								</div>
+								<div class="help-block col-xs-12 col-sm-reset inline"> </div>
+							</div> <br />
+
+							<div class="form-group has-info">
+								<label for="inputInfo" class="col-xs-12 col-sm-3 control-label no-padding-right">Email Contact Number</label>
+								<div class="col-xs-12 col-sm-5">
+									<span class="block input-icon input-icon-right">
+										<input type="number" id="u553r5_contact" name="u553r5_contact" placeholder="Enter Contact Number" style="width: 350px;" required />
+									</span>
+								</div>
+								<div class="help-block col-xs-12 col-sm-reset inline"> </div>
+							</div> <br />
+					</div>
+
+						<div class="modal-footer" style="margin: auto; text-align: center;">
+							<button type="submit" class="btn btn-sm btn-success">
+								<i class="ace-icon fa fa-check"></i>
+								Submit
+							</button> &nbsp; &nbsp;
+							<button class="btn btn-sm btn-primary" data-dismiss="modal">
+								<i class="ace-icon fa fa-times"></i>
+								Cancel
+							</button>
+						</div>
+
+					</form>
+
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal-dialog -->
+		</div>
+
+<!-- Delete Modal -->
+		<div id="delete-modal" class="modal fade" tabindex="-1">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						<h3 class="smaller lighter blue no-margin" id="m3g4w0rld_u553r5_m0d4l_label"></h3>
+					</div>
+
+					<form method="POST">
+
+						<input type="hidden" name="m3g4w0rld_5t4tu5_d3l3t3" id="m3g4w0rld_5t4tu5_d3l3t3" />
+						<input type="hidden" name="u553r5_key_d3l3t3" id="u553r5_key_d3l3t3" />
+
+							<div class="modal-body" style="margin: auto; text-align: center;">
+									<h1 class="form-label"><i class="fa fa-exclamation-circle red"></i> Are you sure you want to delete?</h1> <br />
+
+										<button type="submit" class="btn btn-sm btn-danger" style="margin: auto; text-align: center;">
+											<i class="ace-icon fa fa-check"></i>
+											Yes
+										</button> &nbsp; &nbsp;
+										<button class="btn btn-sm btn-primary" data-dismiss="modal" style="margin: auto; text-align: center;">
+											<i class="ace-icon fa fa-times"></i>
+											No
+										</button>
+
+							</div>
+
+						</form>
+					</div>
+				</div>
+			</div>
+
+		<script>
+		function addUsers()
+		{
+					$("#m3g4w0rld_u553r5_m0d4l_label").html("Add New User(s)") ;
+					$("#m3g4w0rld_5t4tu5").val("addusers") ;
+					$("#u553r5_fname").val("") ;
+					$("#u553r5_lname").val("") ;
+					$("#u553r5_mname").val("") ;
+					$("#u553r5_email").val("") ;
+					$("#u553r5_contact").val("") ;
+		}
+
+		function editUsers(key,fname,lname,mname,email,contact)
+    {
+					$("#m3g4w0rld_u553r5_m0d4l_label").html("Edit User") ;
+          $("#m3g4w0rld_5t4tu5").val("editusers") ;
+					$("#u553r5_key").val(key) ;
+					$("#u553r5_fname").val(fname) ;
+					$("#u553r5_lname").val(lname) ;
+					$("#u553r5_mname").val(mname) ;
+					$("#u553r5_email").val(email) ;
+					$("#u553r5_contact").val(contact) ;
+
+					$('#u553r5_fname').prop('required',false);
+					$('#u553r5_lname').prop('required',false);
+					$('#u553r5_mname').prop('required',false);
+					$('#u553r5_email').prop('required',false);
+					$('#u553r5_contact').prop('required',false);
+    }
+
+    function deleteUsers(key)
+    {
+          $("#productsModalLabel").html("Delete Products") ;
+          $("#m3g4w0rld_5t4tu5_d3l3t3").val("deleteusers") ;
+          $("#u553r5_key_d3l3t3").val(key) ;
+    }
+		</script>
 
 		<script src="../assets/js/jquery-2.1.4.min.js"></script>
 		<script type="text/javascript">
