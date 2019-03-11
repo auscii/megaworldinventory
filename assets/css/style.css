@@ -1,0 +1,15 @@
+body{
+      padding: 0;
+      margin: 0;
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+}
+
+.right-side{
+      margin-right: -10px;
+}
+
+.index-container-center{
+      margin-left: 15%;
+}
