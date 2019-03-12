@@ -17,7 +17,7 @@ include("val/m3g4w0rld_m41n_v4l.php");
 		<link rel="stylesheet" href="../assets/css/ace.min.css" class="ace-main-stylesheet" id="main-ace-style" />
 		<link rel="stylesheet" href="../assets/css/ace-skins.min.css" />
 		<link rel="stylesheet" href="../assets/css/ace-rtl.min.css" />
-		<!-- <link rel="stylesheet" href="../assets/css/style.css" /> -->
+		<link rel="stylesheet" href="../assets/css/style.css" />
 		<script src="../assets/js/ace-extra.min.js"></script>
 	</head>
 
@@ -36,14 +36,8 @@ include("val/m3g4w0rld_m41n_v4l.php");
 				</script>
 
 				<?php //include("../inc/m3g4w0rld_51d3b4r.php"); ?>
-
-				<?php
-				// $url_link = $_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF']);
-				// $file_name = basename($_SERVER['REQUEST_URI'], '?' . $_SERVER['QUERY_STRING']);
-				?>
 				<ul class="nav nav-list">
-				  <?php //if($full_path === $current_path_index) { echo "active"; }?>
-				  <li class="">
+				  <li class="active">
 				    <a href="m3g4w0rld_m41n.php">
 				      <i class="menu-icon fa fa-tachometer"></i>
 				      <span class="menu-text"> Home </span>
@@ -79,7 +73,7 @@ include("val/m3g4w0rld_m41n_v4l.php");
 				  </li>
 
 
-				  <li class="active">
+				  <li class="">
 				    <a href="m3g4w0rld_1nv3nt0ry.php">
 				      <i class="menu-icon fa fa-list"></i>
 				      <span class="menu-text"> Employees Inventory </span>
@@ -134,123 +128,96 @@ include("val/m3g4w0rld_m41n_v4l.php");
 								Megaworld Inventory
 							</li>
 							<li class="active">
-                <a href="m3g4w0rld_1nv3nt0ry.php">Employees Inventory</a>
+                <a href="m3g4w0rld_6r0f113.php">Profile</a>
               </li>
 						</ul><!-- /.breadcrumb -->
 
 					</div>
 
 					<div class="page-content">
+
 						<div class="row">
 							<div class="col-xs-12">
-								<h3 class="header smaller lighter blue">Employees Inventory</h3>
+								<!-- PAGE CONTENT BEGINS -->
 
-								<div class="clearfix">
-									<div class="pull-right tableTools-container"></div>
-								</div>
+								<div class="row">
+									<div class="space-6"></div>
 
-								<div class="col-xs-4" style="margin-left: -1%;">
-										<div class="input-group">
-											<input type="text" class="form-control" name="keywords" placeholder="Search">
-											<div class="input-group-btn">
-												<button type="button" class="btn btn-primary no-border btn-sm">
-													<i class="ace-icon fa fa-search icon-on-right bigger-20"></i>
-												</button>
+									<div class="col-xs-12 col-sm-3 center">
+										<div>
+											<span class="profile-picture">
+													<i class="fa fa-user fa-5x"></i>
+											</span>
+
+											<div class="space-4"></div>
+
+											<div class="width-80 label label-info label-xlg arrowed-in arrowed-in-right">
+												<div class="inline position-relative">
+													<a href="#" class="user-title-label dropdown-toggle" data-toggle="dropdown">
+														<i class="ace-icon fa fa-circle light-green"></i>
+														&nbsp;
+														<span class="white"><?php echo $m364_fname . " " . $m364_mname . " " . $m364_lname; ?></span>
+													</a>
+												</div>
 											</div>
 										</div>
-								</div>
-
-											<table id="dynamic-table" class="table table-striped table-bordered table-hover text-top-5x">
-												<thead>
-													<tr>
-														<th class="center">#</th>
-														<th class="text-center">Domain</th>
-														<th class="text-center">Price</th>
-														<th class="text-center hidden-480">Clicks</th>
-														<th class="text-center">Update</th>
-														<th class="hidden-480 text-center">Status</th>
-														<th class="text-center">Action</th>
-													</tr>
-												</thead>
-
-												<tbody>
-													<tr>
-														<td class="center"><label class="pos-rel">1</label></td>
-														<td class="text-center">app.com</td>
-														<td class="text-center">$45</td>
-														<td class="text-center hidden-480">3,330</td>
-														<td class="text-center">Feb 12</td>
-														<td class="text-center hidden-480"><span class="label label-sm label-warning">Expiring</span></td>
-														<td class="text-center">
-															<div class="hidden-sm hidden-xs action-buttons">
-																<a class="blue" href="#" title="View">
-																	<i class="ace-icon fa fa-search-plus bigger-130"></i>
-																</a>
-																<a class="green" href="#" title="Edit">
-																	<i class="ace-icon fa fa-pencil bigger-130"></i>
-																</a>
-																<a class="red" href="#" title="Delete">
-																	<i class="ace-icon fa fa-trash-o bigger-130"></i>
-																</a>
-															</div>
-
-															<div class="hidden-md hidden-lg">
-																<div class="inline pos-rel">
-																	<button class="btn btn-minier btn-yellow dropdown-toggle" data-toggle="dropdown" data-position="auto">
-																		<i class="ace-icon fa fa-caret-down icon-only bigger-120"></i>
-																	</button>
-
-																		<ul class="dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close">
-																			<li>
-																				<a href="#" class="tooltip-info" data-rel="tooltip" title="View">
-																					<span class="blue">
-																						<i class="ace-icon fa fa-search-plus bigger-120"></i>
-																					</span>
-																				</a>
-																			</li>
-
-																			<li>
-																				<a href="#" class="tooltip-success" data-rel="tooltip" title="Edit">
-																					<span class="green">
-																						<i class="ace-icon fa fa-pencil-square-o bigger-120"></i>
-																					</span>
-																				</a>
-																			</li>
-
-																			<li>
-																				<a href="#" class="tooltip-error" data-rel="tooltip" title="Delete">
-																					<span class="red">
-																						<i class="ace-icon fa fa-trash-o bigger-120"></i>
-																					</span>
-																				</a>
-																			</li>
-																		</ul>
-
-																</div>
-															</div>
-														</td>
-													</tr>
-
-												</tbody>
-											</table>
-									</div>
-								</div>
-							</div>
-
-
 
 										<div class="space-6"></div>
 									</div>
 
 								</div><!-- /.row -->
 
-								<div class="hr hr32 hr-dotted"></div>
-
-
-
 								<!-- PAGE CONTENT ENDS -->
 							</div><!-- /.col -->
+
+							<div class="profile-user-info profile-user-info-striped">
+
+								<div class="profile-info-row">
+									<div class="profile-info-name"> Username </div>
+										<div class="profile-info-value">
+											<span class="editable" id="username"><?php echo $m364_uname; ?></span>
+										</div>
+								</div>
+
+								<div class="profile-info-row">
+									<div class="profile-info-name"> First Name </div>
+										<div class="profile-info-value">
+											<span class="editable" id="username"><?php echo $m364_fname; ?></span>
+										</div>
+								</div>
+
+								<div class="profile-info-row">
+									<div class="profile-info-name"> Middle Name </div>
+									<div class="profile-info-value">
+										<span class="editable" id="username"><?php echo $m364_mname; ?></span>
+									</div>
+								</div>
+
+								<div class="profile-info-row">
+									<div class="profile-info-name"> Last Name </div>
+									<div class="profile-info-value">
+										<span class="editable" id="age"><?php echo $m364_lname; ?></span>
+									</div>
+								</div>
+
+								<div class="profile-info-row">
+									<div class="profile-info-name"> Email Address </div>
+									<div class="profile-info-value">
+										<span class="editable" id="age"><?php echo $m364_3m41l; ?></span>
+									</div>
+								</div>
+
+								<div class="profile-info-row">
+									<div class="profile-info-name"> Contact No. </div>
+									<div class="profile-info-value">
+										<span class="editable" id="age"><?php echo $m364_c0nt4ct; ?></span>
+									</div>
+								</div>
+
+							</div>
+
 						</div><!-- /.row -->
+
 					</div><!-- /.page-content -->
 				</div>
 			</div><!-- /.main-content -->
@@ -300,13 +267,6 @@ include("val/m3g4w0rld_m41n_v4l.php");
 		<script src="../assets/js/jquery.flot.resize.min.js"></script>
 		<script src="../assets/js/ace-elements.min.js"></script>
 		<script src="../assets/js/ace.min.js"></script>
-
-		<script src="../assets/js/dataTables.buttons.min.js"></script>
-		<script src="../assets/js/buttons.flash.min.js"></script>
-		<script src="../assets/js/buttons.html5.min.js"></script>
-		<script src="../assets/js/buttons.print.min.js"></script>
-		<script src="../assets/js/buttons.colVis.min.js"></script>
-		<script src="../assets/js/dataTables.select.min.js"></script>
 
 		<script type="text/javascript">
 			jQuery(function($) {

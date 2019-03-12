@@ -1,5 +1,76 @@
 <?php
 // include("../inc/m3g4w0rld_c0mm0n.php");
+session_start();
+
+if (!empty($_SESSION['m364_53c5r1ty'])) {
+    $m364_53c5r1ty = $_SESSION['m364_53c5r1ty'];
+} else {
+    $m364_53c5r1ty = "";
+}
+
+if ($m364_53c5r1ty != "01787amk038894kk") {
+    header("Location: ../index.php");
+    exit();
+}
+
+if (!empty($_SESSION['m364_uname'])) {
+    $m364_uname = $_SESSION['m364_uname'];
+} else {
+    $m364_uname = "";
+}
+
+if (!empty($_SESSION['m364_upass'])) {
+    $m364_upass = $_SESSION['m364_upass'];
+} else {
+    $m364_upass = "";
+}
+
+if (!empty($_SESSION['m364_fname'])) {
+    $m364_fname = $_SESSION['m364_fname'];
+} else {
+    $m364_fname = "";
+}
+
+if (!empty($_SESSION['m364_lname'])) {
+    $m364_lname = $_SESSION['m364_lname'];
+} else {
+    $m364_lname = "";
+}
+
+if (!empty($_SESSION['m364_mname'])) {
+    $m364_mname = $_SESSION['m364_mname'];
+} else {
+    $m364_mname = "";
+}
+
+if (!empty($_SESSION['m364_3m41l'])) {
+    $m364_3m41l = $_SESSION['m364_3m41l'];
+} else {
+    $m364_3m41l = "";
+}
+
+if (!empty($_SESSION['m364_c0nt4ct'])) {
+    $m364_c0nt4ct = $_SESSION['m364_c0nt4ct'];
+} else {
+    $m364_c0nt4ct = "";
+}
+
+if (!empty($_SESSION['m364_1d'])) {
+    $m364_1d = $_SESSION['m364_1d'];
+} else {
+    $m364_1d = "";
+}
+
+if (!empty($_SESSION['m364_53c5r1ty'])) {
+    $m364_53c5r1ty = $_SESSION['m364_53c5r1ty'];
+} else {
+    $m364_53c5r1ty = "";
+}
+
+if ($m364_53c5r1ty != "01787amk038894kk") {
+    header("Location: ../index.php");
+    exit();
+}
 
 if (!empty($_POST['u553r5_fname'])) {
 	  $u553r5_fname = $_POST['u553r5_fname'];
@@ -31,6 +102,27 @@ if (!empty($_POST['u553r5_contact'])) {
 		$u553r5_contact = "";
 }
 
+if (!empty($_POST['u553r5_uname'])) {
+	   $u553r5_uname = $_POST['u553r5_uname'];
+} else {
+		 $u553r5_uname = "";
+}
+
+if (!empty($_POST['u553r5_upass'])) {
+	   $u553r5_upass = $_POST['u553r5_upass'];
+		 $u553r5_upass = hash("sha256", $u553r5_upass);
+} else {
+		 $u553r5_upass = "";
+}
+
+if (!empty($_POST['u553r5_conf_upass'])) {
+	   $u553r5_conf_upass = $_POST['u553r5_conf_upass'];
+		 $u553r5_conf_upass = hash("sha256", $u553r5_conf_upass);
+} else {
+		 $u553r5_conf_upass = "";
+}
+
+
 
 if (!empty($_POST['u553r5_key'])) {
 	   $u553r5_key = $_POST['u553r5_key'];
@@ -61,30 +153,41 @@ if (!empty($_POST['u553r5_key_d3l3t3'])) {
 if($m3g4w0rld_5t4tu5 == "addusers"){
     // move_uploaded_file($_FILES["upload_pic"]["tmp_name"],"images/" . $_FILES["upload_pic"]["name"]);
     // $imageLocation=$_FILES["upload_pic"]["name"];
-    $m3g4w0rld_5t5t3m3nt = $xcon->prepare("INSERT INTO u553r5 (
-                                        u553r5_fname,
-                                        u553r5_lname,
-                                        u553r5_mname,
-                                        u553r5_email,
-                                        u553r5_contact
-                                        )
-                                        VALUES (
-                                        :u553r5_fname,
-                                        :u553r5_lname,
-                                        :u553r5_mname,
-                                        :u553r5_email,
-                                        :u553r5_contact
-                                        )");
-    $m3g4w0rld_5t5t3m3nt->execute(
-        array(
-            'u553r5_fname'             => $u553r5_fname,
-            'u553r5_lname'   					 => $u553r5_lname,
-            'u553r5_mname'    				 => $u553r5_mname,
-            'u553r5_email'       			 => $u553r5_email,
-            'u553r5_contact'      		 => $u553r5_contact
-        )
-    );
-    $m3g4w0rld_5t5t3m3nt->fetchAll();
+		if ($u553r5_upass != $u553r5_conf_upass) {
+			  echo "<script>alert('Password Mismatched! Please check your password..'); window.location.href='m3g4w0rld_u553r5.php';</script>";
+				exit();
+		} else {
+				    $m3g4w0rld_5t5t3m3nt = $xcon->prepare("INSERT INTO u553r5 (
+				                                        u553r5_fname,
+				                                        u553r5_lname,
+				                                        u553r5_mname,
+				                                        u553r5_email,
+				                                        u553r5_contact,
+																								u553r5_uname,
+																								u553r5_upass
+				                                        )
+				                                        VALUES (
+				                                        :u553r5_fname,
+				                                        :u553r5_lname,
+				                                        :u553r5_mname,
+				                                        :u553r5_email,
+				                                        :u553r5_contact,
+																								:u553r5_uname,
+																								:u553r5_upass
+				                                        )");
+				    $m3g4w0rld_5t5t3m3nt->execute(
+				        array(
+				            'u553r5_fname'             => $u553r5_fname,
+				            'u553r5_lname'   					 => $u553r5_lname,
+				            'u553r5_mname'    				 => $u553r5_mname,
+				            'u553r5_email'       			 => $u553r5_email,
+				            'u553r5_contact'      		 => $u553r5_contact,
+				            'u553r5_uname'      		 	 => $u553r5_uname,
+				            'u553r5_upass'      		   => $u553r5_upass
+				        )
+				    );
+				    $m3g4w0rld_5t5t3m3nt->fetchAll();
+		}
 }
 
 if ($m3g4w0rld_5t4tu5 == "editusers"){
@@ -93,16 +196,20 @@ if ($m3g4w0rld_5t4tu5 == "editusers"){
 			                                    u553r5_lname = :u553r5_lname,
 			                                    u553r5_mname = :u553r5_mname,
 			                                    u553r5_email = :u553r5_email,
-																					u553r5_contact = :u553r5_contact
+																					u553r5_contact = :u553r5_contact,
+																					u553r5_uname = :u553r5_uname,
+																					u553r5_upass = :u553r5_upass
 			                                    WHERE u553r5_id = $u553r5_key;
                                         ");
     $m3g4w0rld_5t5t3m3nt->execute(
         array(
-            'u553r5_fname'           => $u553r5_fname,
-            'u553r5_lname'   				 => $u553r5_lname,
-            'u553r5_mname'   				 => $u553r5_mname,
-            'u553r5_email'      		 => $u553r5_email,
-						'u553r5_contact'				 => $u553r5_contact
+            'u553r5_fname'             => $u553r5_fname,
+            'u553r5_lname'   					 => $u553r5_lname,
+            'u553r5_mname'    				 => $u553r5_mname,
+            'u553r5_email'       			 => $u553r5_email,
+            'u553r5_contact'      		 => $u553r5_contact,
+            'u553r5_uname'      		 	 => $u553r5_uname,
+            'u553r5_upass'      		   => $u553r5_upass
         )
     );
     $m3g4w0rld_5t5t3m3nt->fetchAll();

@@ -5,7 +5,7 @@
 <ul class="nav nav-list">
   <?php //if($full_path === $current_path_index) { echo "active"; }?>
   <li class="">
-    <a href="../index.php">
+    <a href="../components/m3g4w0rld_m41n.php">
       <i class="menu-icon fa fa-tachometer"></i>
       <span class="menu-text"> Home </span>
     </a>
@@ -44,7 +44,7 @@
   <li class="">
     <a href="components/m3g4w0rld_1nv3nt0ry.php">
       <i class="menu-icon fa fa-list"></i>
-      <span class="menu-text"> Inventory </span>
+      <span class="menu-text">Employees Inventory </span>
     </a>
     <b class="arrow"></b>
   </li>

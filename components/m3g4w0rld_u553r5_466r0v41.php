@@ -60,7 +60,7 @@ include("val/m3g4w0rld_u553r5_v4l.php");
 				    <b class="arrow"></b>
 
 				    <ul class="submenu">
-				      <li class="active">
+				      <li class="">
 				        <a href="m3g4w0rld_u553r5.php">
 				          <i class="menu-icon fa fa-user"></i>
 				          Users Masterfile
@@ -68,7 +68,7 @@ include("val/m3g4w0rld_u553r5_v4l.php");
 				        <b class="arrow"></b>
 				      </li>
 
-				      <li class="">
+				      <li class="active">
 				        <a href="m3g4w0rld_u553r5_466r0v41.php">
 				          <i class="menu-icon fa fa-user"></i>
 				          Users Approval
@@ -142,16 +142,11 @@ include("val/m3g4w0rld_u553r5_v4l.php");
 					<div class="page-content">
 						<div class="row">
 							<div class="col-xs-12">
-								<h3 class="header smaller lighter blue">Users Masterfile</h3>
+								<h3 class="header smaller lighter blue">Users Approval</h3>
 
 								<div class="clearfix">
 									<div class="pull-right tableTools-container"></div>
 								</div>
-
-								<button href="#addModal" onclick="addUsers();" role="button" data-toggle="modal" class="btn btn-white btn-success btn-bold">
-									<i class="ace-icon fa fa-plus-circle bigger-120 green"></i>
-									Add New User
-								</button>
 
 											<table id="dynamic-table" class="table table-striped table-bordered table-hover text-top-1x">
 												<thead>
@@ -160,7 +155,7 @@ include("val/m3g4w0rld_u553r5_v4l.php");
 														<th class="text-center">Fullname</th>
 														<th class="text-center">Email Address</th>
 														<th class="text-center">Contact number</th>
-														<th class="text-center">Active</th>
+														<th class="text-center">Approval</th>
 														<th class="text-center">Date Registered</th>
 														<th class="text-center">Action</th>
 													</tr>
@@ -191,11 +186,26 @@ include("val/m3g4w0rld_u553r5_v4l.php");
 														<td class="text-center">
 																<?php
 																if ($m3g4w0rld_u553r5_active === "1") {
-																	  echo '<span class="label label-success"><i class="fa fa-check"></i> ACTIVE</span>';
-																} else {
-																		echo '<span class="label label-danger"><i class="fa fa-exclamation-circle"></i> INACTIVE</span>';
+																	  echo '<span class="label label-success"><i class="fa fa-check"></i> APPROVED</span>';
 																}
+															  else if ($m3g4w0rld_u553r5_active === "0") {
+																		// echo '<span class="label label-danger"><i class="fa fa-exclamation-circle"></i> INACTIVE</span>';
 																?>
+																<form method="POST">
+																			<input type="hidden" name="m364_4ppr0v4l_y3s" id="m364_4ppr0v4l_y3s" value="1" />
+																			<input type="hidden" name="m364_4ppr0v4l_n0" id="m364_4ppr0v4l_n0" value="0" />
+																			<input type="hidden" name="m364_4ppr0v4l_st4tus" id="m364_4ppr0v4l_st4tus" />
+																			
+																			<button type="submit" class="label label-success label-white middle" onclick="yesApproval();">
+																				<i class="ace-icon fa fa-check-circle bigger-120"></i>
+																				Yes
+																			</button> &nbsp;
+																			<button type="submit" class="label label-danger label-white middle" onclick="noApproval();">
+																				<i class="ace-icon fa fa-times-circle bigger-120"></i>
+																				No
+																			</button>
+																</form>
+																<?php } ?>
 														</td>
 														<td class="text-center"><?php echo $m3g4w0rld_u553r5_date; ?></td>
 														<td class="text-center">
@@ -231,23 +241,18 @@ include("val/m3g4w0rld_u553r5_v4l.php");
 								</div>
 							</div>
 
+						<div class="space-6"></div>
+					</div>
 
+				</div><!-- /.row -->
 
-										<div class="space-6"></div>
-									</div>
-
-								</div><!-- /.row -->
-
-								<div class="hr hr32 hr-dotted"></div>
-
-
-
-								<!-- PAGE CONTENT ENDS -->
-							</div><!-- /.col -->
-						</div><!-- /.row -->
-					</div><!-- /.page-content -->
-				</div>
-			</div><!-- /.main-content -->
+				<div class="hr hr32 hr-dotted"></div>
+					<!-- PAGE CONTENT ENDS -->
+				</div><!-- /.col -->
+			</div><!-- /.row -->
+		</div><!-- /.page-content -->
+	</div>
+</div><!-- /.main-content -->
 
 			<div class="footer">
 				<div class="footer-inner">
@@ -265,200 +270,14 @@ include("val/m3g4w0rld_u553r5_v4l.php");
 			</a>
 		</div><!-- /.main-container -->
 
-
-
-<div id="addModal" class="modal fade" tabindex="-1">
-	<div class="modal-dialog">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-				<h3 class="smaller lighter blue no-margin" id="m3g4w0rld_u553r5_m0d4l_label"></h3>
-			</div>
-
-			<form method="POST" id="userForm">
-
-				<input type="hidden" name="m3g4w0rld_5t4tu5" id="m3g4w0rld_5t4tu5" />
-				<input type="hidden" name="u553r5_key" id="u553r5_key" />
-
-					<div class="modal-body" style="margin: auto; text-align: center;">
-
-						<div class="form-group has-info">
-							<label for="inputInfo" class="col-xs-12 col-sm-3 control-label no-padding-right">Username</label>
-							<div class="col-xs-12 col-sm-5">
-								<span class="block input-icon input-icon-right">
-									<input type="text" id="u553r5_uname" name="u553r5_uname" placeholder="Enter Username" style="width: 350px;" required />
-								</span>
-							</div>
-							<div class="help-block col-xs-12 col-sm-reset inline"> </div>
-						</div> <br />
-
-						<div class="form-group has-info">
-							<label for="inputInfo" class="col-xs-12 col-sm-3 control-label no-padding-right">Password</label>
-							<div class="col-xs-12 col-sm-5">
-								<span class="block input-icon input-icon-right">
-									<input type="password" id="u553r5_upass" name="u553r5_upass" placeholder="Enter Password" style="width: 350px;" required />
-								</span>
-							</div>
-							<div class="help-block col-xs-12 col-sm-reset inline"> </div>
-						</div> <br />
-
-						<div class="form-group has-info">
-							<label for="inputInfo" class="col-xs-12 col-sm-3 control-label no-padding-right">Confirm Password</label>
-							<div class="col-xs-12 col-sm-5">
-								<span class="block input-icon input-icon-right">
-									<input type="password" id="u553r5_conf_upass" name="u553r5_conf_upass" placeholder="Confirm your Password" style="width: 350px;" required />
-								</span>
-							</div>
-							<div class="help-block col-xs-12 col-sm-reset inline"> </div>
-						</div> <br />
-
-							<div class="form-group has-info">
-								<label for="inputInfo" class="col-xs-12 col-sm-3 control-label no-padding-right">First Name</label>
-								<div class="col-xs-12 col-sm-5">
-									<span class="block input-icon input-icon-right">
-										<input type="text" id="u553r5_fname" name="u553r5_fname" placeholder="Enter First Name" style="width: 350px;" required />
-									</span>
-								</div>
-								<div class="help-block col-xs-12 col-sm-reset inline"> </div>
-							</div> <br />
-
-							<div class="form-group has-info">
-								<label for="inputInfo" class="col-xs-12 col-sm-3 control-label no-padding-right">Last Name</label>
-								<div class="col-xs-12 col-sm-5">
-									<span class="block input-icon input-icon-right">
-										<input type="text" id="u553r5_lname" name="u553r5_lname" placeholder="Enter Last Name" style="width: 350px;" required  />
-									</span>
-								</div>
-								<div class="help-block col-xs-12 col-sm-reset inline"> </div>
-							</div> <br />
-
-							<div class="form-group has-info">
-								<label for="inputInfo" class="col-xs-12 col-sm-3 control-label no-padding-right">Middle Name</label>
-								<div class="col-xs-12 col-sm-5">
-									<span class="block input-icon input-icon-right">
-										<input type="text" id="u553r5_mname" name="u553r5_mname" placeholder="Enter Middle Name" style="width: 350px;" required />
-									</span>
-								</div>
-								<div class="help-block col-xs-12 col-sm-reset inline"> </div>
-							</div> <br />
-
-							<div class="form-group has-info">
-								<label for="inputInfo" class="col-xs-12 col-sm-3 control-label no-padding-right">Email Address</label>
-								<div class="col-xs-12 col-sm-5">
-									<span class="block input-icon input-icon-right">
-										<input type="email" id="u553r5_email" name="u553r5_email" placeholder="Enter Email Address" style="width: 350px;" required />
-									</span>
-								</div>
-								<div class="help-block col-xs-12 col-sm-reset inline"> </div>
-							</div> <br />
-
-							<div class="form-group has-info">
-								<label for="inputInfo" class="col-xs-12 col-sm-3 control-label no-padding-right">Email Contact Number</label>
-								<div class="col-xs-12 col-sm-5">
-									<span class="block input-icon input-icon-right">
-										<input type="number" id="u553r5_contact" name="u553r5_contact" placeholder="Enter Contact Number" style="width: 350px;" required />
-									</span>
-								</div>
-								<div class="help-block col-xs-12 col-sm-reset inline"> </div>
-							</div> <br />
-
-						</div>
-
-						<div class="modal-footer" style="margin: auto; text-align: center;">
-							<button type="submit" class="btn btn-sm btn-success">
-								<i class="ace-icon fa fa-check"></i>
-								Submit
-							</button> &nbsp; &nbsp;
-							<button class="btn btn-sm btn-primary" data-dismiss="modal">
-								<i class="ace-icon fa fa-times"></i>
-								Cancel
-							</button>
-						</div>
-
-					</form>
-
-				</div><!-- /.modal-content -->
-			</div><!-- /.modal-dialog -->
-		</div>
-
-<!-- Delete Modal -->
-		<div id="delete-modal" class="modal fade" tabindex="-1">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-						<h3 class="smaller lighter blue no-margin" id="m3g4w0rld_u553r5_m0d4l_label"></h3>
-					</div>
-
-					<form method="POST">
-
-						<input type="hidden" name="m3g4w0rld_5t4tu5_d3l3t3" id="m3g4w0rld_5t4tu5_d3l3t3" />
-						<input type="hidden" name="u553r5_key_d3l3t3" id="u553r5_key_d3l3t3" />
-
-							<div class="modal-body" style="margin: auto; text-align: center;">
-									<h1 class="form-label"><i class="fa fa-exclamation-circle red"></i> Are you sure you want to delete?</h1> <br />
-
-										<button type="submit" class="btn btn-sm btn-danger" style="margin: auto; text-align: center;">
-											<i class="ace-icon fa fa-check"></i>
-											Yes
-										</button> &nbsp; &nbsp;
-										<button class="btn btn-sm btn-primary" data-dismiss="modal" style="margin: auto; text-align: center;">
-											<i class="ace-icon fa fa-times"></i>
-											No
-										</button>
-
-							</div>
-
-						</form>
-
-					</div>
-				</div>
-			</div>
-
 		<script>
-		function addUsers()
-		{
-					$("#m3g4w0rld_u553r5_m0d4l_label").html("Add New User") ;
-					$("#m3g4w0rld_5t4tu5").val("addusers") ;
-					$("#u553r5_fname").val("") ;
-					$("#u553r5_lname").val("") ;
-					$("#u553r5_mname").val("") ;
-					$("#u553r5_email").val("") ;
-					$("#u553r5_contact").val("") ;
-					$("#u553r5_uname").val("") ;
-					$("#u553r5_upass").val("") ;
-					$("#u553r5_conf_upass").val("") ;
-		}
+			function yesApproval() {
 
-		function editUsers(key,fname,lname,mname,email,contact,uname,upass)
-    {
-					$("#m3g4w0rld_u553r5_m0d4l_label").html("Edit User") ;
-          $("#m3g4w0rld_5t4tu5").val("editusers") ;
-					$("#u553r5_key").val(key) ;
-					$("#u553r5_fname").val(fname) ;
-					$("#u553r5_lname").val(lname) ;
-					$("#u553r5_mname").val(mname) ;
-					$("#u553r5_email").val(email) ;
-					$("#u553r5_contact").val(contact) ;
-					$("#u553r5_uname").val(uname) ;
-					$("#u553r5_upass").val(upass) ;
+			}
 
-					$('#u553r5_fname').prop('required',false);
-					$('#u553r5_lname').prop('required',false);
-					$('#u553r5_mname').prop('required',false);
-					$('#u553r5_email').prop('required',false);
-					$('#u553r5_contact').prop('required',false);
-					$('#u553r5_uname').prop('required',false);
-					$('#u553r5_upass').prop('required',false);
-					$('#u553r5_conf_upass').prop('required',false);
-    }
+			function noApproval() {
 
-    function deleteUsers(key)
-    {
-          $("#productsModalLabel").html("Delete Products") ;
-          $("#m3g4w0rld_5t4tu5_d3l3t3").val("deleteusers") ;
-          $("#u553r5_key_d3l3t3").val(key) ;
-    }
+			}
 		</script>
 
 		<script src="../assets/js/jquery-2.1.4.min.js"></script>

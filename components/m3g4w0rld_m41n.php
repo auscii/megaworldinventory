@@ -17,7 +17,7 @@ include("val/m3g4w0rld_m41n_v4l.php");
 		<link rel="stylesheet" href="../assets/css/ace.min.css" class="ace-main-stylesheet" id="main-ace-style" />
 		<link rel="stylesheet" href="../assets/css/ace-skins.min.css" />
 		<link rel="stylesheet" href="../assets/css/ace-rtl.min.css" />
-		<!-- <link rel="stylesheet" href="../assets/css/style.css" /> -->
+		<link rel="stylesheet" href="../assets/css/style.css" />
 		<script src="../assets/js/ace-extra.min.js"></script>
 	</head>
 
@@ -36,14 +36,8 @@ include("val/m3g4w0rld_m41n_v4l.php");
 				</script>
 
 				<?php //include("../inc/m3g4w0rld_51d3b4r.php"); ?>
-
-				<?php
-				// $url_link = $_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF']);
-				// $file_name = basename($_SERVER['REQUEST_URI'], '?' . $_SERVER['QUERY_STRING']);
-				?>
 				<ul class="nav nav-list">
-				  <?php //if($full_path === $current_path_index) { echo "active"; }?>
-				  <li class="">
+				  <li class="active">
 				    <a href="m3g4w0rld_m41n.php">
 				      <i class="menu-icon fa fa-tachometer"></i>
 				      <span class="menu-text"> Home </span>
@@ -79,7 +73,7 @@ include("val/m3g4w0rld_m41n_v4l.php");
 				  </li>
 
 
-				  <li class="active">
+				  <li class="">
 				    <a href="m3g4w0rld_1nv3nt0ry.php">
 				      <i class="menu-icon fa fa-list"></i>
 				      <span class="menu-text"> Employees Inventory </span>
@@ -134,110 +128,82 @@ include("val/m3g4w0rld_m41n_v4l.php");
 								Megaworld Inventory
 							</li>
 							<li class="active">
-                <a href="m3g4w0rld_1nv3nt0ry.php">Employees Inventory</a>
+                <a href="#">Home</a>
               </li>
 						</ul><!-- /.breadcrumb -->
 
 					</div>
 
 					<div class="page-content">
+						<div class="page-header">
+							<h1>
+								Home
+								<small>
+									<i class="ace-icon fa fa-angle-double-right"></i>
+									overview &amp; stats
+								</small>
+							</h1>
+						</div><!-- /.page-header -->
+
 						<div class="row">
 							<div class="col-xs-12">
-								<h3 class="header smaller lighter blue">Employees Inventory</h3>
+								<!-- PAGE CONTENT BEGINS -->
+								<div class="alert alert-block alert-success">
+									<button type="button" class="close" data-dismiss="alert">
+										<i class="ace-icon fa fa-times"></i>
+									</button>
 
-								<div class="clearfix">
-									<div class="pull-right tableTools-container"></div>
-								</div>
+									<i class="ace-icon fa fa-check green"></i>
 
-								<div class="col-xs-4" style="margin-left: -1%;">
-										<div class="input-group">
-											<input type="text" class="form-control" name="keywords" placeholder="Search">
-											<div class="input-group-btn">
-												<button type="button" class="btn btn-primary no-border btn-sm">
-													<i class="ace-icon fa fa-search icon-on-right bigger-20"></i>
-												</button>
-											</div>
-										</div>
-								</div>
+									Welcome to
+									<strong class="green">
+										Megaworld Inventory
+										<small>(v1.0)</small>
+									</strong>
+                </div>
 
-											<table id="dynamic-table" class="table table-striped table-bordered table-hover text-top-5x">
-												<thead>
-													<tr>
-														<th class="center">#</th>
-														<th class="text-center">Domain</th>
-														<th class="text-center">Price</th>
-														<th class="text-center hidden-480">Clicks</th>
-														<th class="text-center">Update</th>
-														<th class="hidden-480 text-center">Status</th>
-														<th class="text-center">Action</th>
-													</tr>
-												</thead>
+								<div class="row">
+									<div class="space-6"></div>
 
-												<tbody>
-													<tr>
-														<td class="center"><label class="pos-rel">1</label></td>
-														<td class="text-center">app.com</td>
-														<td class="text-center">$45</td>
-														<td class="text-center hidden-480">3,330</td>
-														<td class="text-center">Feb 12</td>
-														<td class="text-center hidden-480"><span class="label label-sm label-warning">Expiring</span></td>
-														<td class="text-center">
-															<div class="hidden-sm hidden-xs action-buttons">
-																<a class="blue" href="#" title="View">
-																	<i class="ace-icon fa fa-search-plus bigger-130"></i>
-																</a>
-																<a class="green" href="#" title="Edit">
-																	<i class="ace-icon fa fa-pencil bigger-130"></i>
-																</a>
-																<a class="red" href="#" title="Delete">
-																	<i class="ace-icon fa fa-trash-o bigger-130"></i>
-																</a>
-															</div>
+									<div class="col-sm-7 infobox-container index-container-center">
 
-															<div class="hidden-md hidden-lg">
-																<div class="inline pos-rel">
-																	<button class="btn btn-minier btn-yellow dropdown-toggle" data-toggle="dropdown" data-position="auto">
-																		<i class="ace-icon fa fa-caret-down icon-only bigger-120"></i>
-																	</button>
+                    <a href="#">
+                      <div class="infobox infobox-green">
+    											<div class="infobox-icon">
+    												<i class="ace-icon fa fa-users"></i>
+    											</div>
+    											<div class="infobox-data">
+    												<span class="infobox-data-number">32</span>
+    												<div class="infobox-content"> New Users</div>
+    											</div>
+  										 </div>
+                     </a>
 
-																		<ul class="dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close">
-																			<li>
-																				<a href="#" class="tooltip-info" data-rel="tooltip" title="View">
-																					<span class="blue">
-																						<i class="ace-icon fa fa-search-plus bigger-120"></i>
-																					</span>
-																				</a>
-																			</li>
+	                  <a href="#">
+									    <div class="infobox infobox-blue">
+  											<div class="infobox-icon">
+  												<i class="ace-icon fa fa-users"></i>
+  											</div>
 
-																			<li>
-																				<a href="#" class="tooltip-success" data-rel="tooltip" title="Edit">
-																					<span class="green">
-																						<i class="ace-icon fa fa-pencil-square-o bigger-120"></i>
-																					</span>
-																				</a>
-																			</li>
+                        <div class="infobox-data">
+  												<span class="infobox-data-number">11</span>
+  												<div class="infobox-content"> New Employees</div>
+											  </div>
+									    </div>
+                    </a>
 
-																			<li>
-																				<a href="#" class="tooltip-error" data-rel="tooltip" title="Delete">
-																					<span class="red">
-																						<i class="ace-icon fa fa-trash-o bigger-120"></i>
-																					</span>
-																				</a>
-																			</li>
-																		</ul>
+                    <a href="#">
+    										<div class="infobox infobox-pink">
+    											<div class="infobox-icon">
+    												<i class="ace-icon fa fa-bell"></i>
+    											</div>
 
-																</div>
-															</div>
-														</td>
-													</tr>
-
-												</tbody>
-											</table>
-									</div>
-								</div>
-							</div>
-
-
+    											<div class="infobox-data">
+    												<span class="infobox-data-number">8</span>
+    												<div class="infobox-content"> New Approval</div>
+    											</div>
+    										</div>
+                     </a>
 
 										<div class="space-6"></div>
 									</div>
@@ -300,13 +266,6 @@ include("val/m3g4w0rld_m41n_v4l.php");
 		<script src="../assets/js/jquery.flot.resize.min.js"></script>
 		<script src="../assets/js/ace-elements.min.js"></script>
 		<script src="../assets/js/ace.min.js"></script>
-
-		<script src="../assets/js/dataTables.buttons.min.js"></script>
-		<script src="../assets/js/buttons.flash.min.js"></script>
-		<script src="../assets/js/buttons.html5.min.js"></script>
-		<script src="../assets/js/buttons.print.min.js"></script>
-		<script src="../assets/js/buttons.colVis.min.js"></script>
-		<script src="../assets/js/dataTables.select.min.js"></script>
 
 		<script type="text/javascript">
 			jQuery(function($) {
