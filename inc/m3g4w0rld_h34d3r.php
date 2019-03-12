@@ -22,16 +22,16 @@
         <li class="green dropdown-modal">
           <a data-toggle="dropdown" class="dropdown-toggle" href="#">
             <i class="fa fa-bell fa-2x icon-animated-bell"></i>
-            <span class="badge badge-success">5</span>
+            <span class="badge badge-success">0</span>
           </a>
 
           <ul class="dropdown-menu-right dropdown-navbar dropdown-menu dropdown-caret dropdown-close">
             <li class="dropdown-header">
               <i class="ace-icon fa fa-bell icon-animated-bell"></i>
-              5 New Notifications
+              0 New Notifications
             </li>
 
-            <li class="dropdown-content">
+            <!-- <li class="dropdown-content">
               <ul class="dropdown-menu dropdown-navbar">
 
                 <li>
@@ -51,7 +51,7 @@
                 </li>
 
               </ul>
-            </li>
+            </li> -->
 
             <li class="dropdown-footer">
               <a href="#">

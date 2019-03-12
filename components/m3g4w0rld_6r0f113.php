@@ -45,6 +45,8 @@ include("val/m3g4w0rld_m41n_v4l.php");
 				    <b class="arrow"></b>
 				  </li>
 
+					<?php if ($adm1n === $m364_p051t10n) { ?>
+
 				  <li class="">
 				    <a href="#" class="dropdown-toggle">
 				      <i class="menu-icon fa fa-users"></i>
@@ -71,6 +73,8 @@ include("val/m3g4w0rld_m41n_v4l.php");
 				      </li>
 				    </ul>
 				  </li>
+
+					<?php } ?>
 
 
 				  <li class="">

@@ -1,8 +1,4 @@
-<?php
-include("inc/m3g4w0rld_c0mm0n.php");
-include("components/val/m3g4w0rld_u553r5_1061n.php");
-?>
-
+<?php include("inc/m3g4w0rld_c0mm0n.php"); include("components/val/m3g4w0rld_u553r5_1061n.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
 	<head>

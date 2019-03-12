@@ -280,7 +280,7 @@ include("val/m3g4w0rld_u553r5_v4l.php");
 				<input type="hidden" name="m3g4w0rld_5t4tu5" id="m3g4w0rld_5t4tu5" />
 				<input type="hidden" name="u553r5_key" id="u553r5_key" />
 
-					<div class="modal-body" style="margin: auto; text-align: center;">
+			  <div class="modal-body" style="margin: auto; text-align: center;">
 
 						<div class="form-group has-info">
 							<label for="inputInfo" class="col-xs-12 col-sm-3 control-label no-padding-right">Username</label>

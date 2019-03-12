@@ -60,4 +60,10 @@ if (!empty($_SESSION['m364_1d'])) {
     $m364_1d = "";
 }
 
+if (!empty($_SESSION['m364_p051t10n'])) {
+    $m364_p051t10n = $_SESSION['m364_p051t10n'];
+} else {
+    $m364_p051t10n = "";
+}
+
 ?>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 11, 2019 at 04:58 AM
+-- Generation Time: Mar 12, 2019 at 10:55 AM
 -- Server version: 10.1.29-MariaDB
 -- PHP Version: 7.1.12
 
@@ -43,13 +43,29 @@ CREATE TABLE `3mpl0y335` (
 CREATE TABLE `u553r5` (
   `u553r5_id` int(11) NOT NULL,
   `u553r5_fname` varchar(50) NOT NULL,
+  `u553r5_uname` varchar(255) NOT NULL,
+  `u553r5_upass` varchar(255) NOT NULL,
   `u553r5_lname` varchar(50) NOT NULL,
   `u553r5_mname` varchar(50) NOT NULL,
   `u553r5_email` varchar(50) NOT NULL,
-  `u553r5_contact` int(20) NOT NULL,
+  `u553r5_contact` varchar(100) NOT NULL,
+  `u553r5_position` varchar(50) NOT NULL,
   `u553r5_active` int(10) NOT NULL,
   `u553r5_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `u553r5`
+--
+
+INSERT INTO `u553r5` (`u553r5_id`, `u553r5_fname`, `u553r5_uname`, `u553r5_upass`, `u553r5_lname`, `u553r5_mname`, `u553r5_email`, `u553r5_contact`, `u553r5_position`, `u553r5_active`, `u553r5_date`) VALUES
+(1, 'Sean', 'seann', '0b1f54a61fa4b42f021b4703a8c8a7842a8323f9d966bf4d9e9a6cdb34432e26', 'Narvasa', 'D', 'sa.narvasa@gmail.com', '09166860971', '4dm1n15tr4t0r', 1, '2019-03-12 17:50:05'),
+(2, 'Gena', 's', '043a718774c572bd8a25adbeb1bfcd5c0256ae11cecf9f9c3f925d0e52beaf89', 'Tusi', 'L', 's@s', '2', 'r36u14ru53r', 1, '2019-03-12 17:22:43'),
+(3, 'Spencer', 'shart', '01206183ad65e887bf6fa0c070bc0ccab9532feff45c9c658a0f879bcd7f5eb0', 'Hart', 'Madriaga', 'shart.global@megaworldcorp.com', '091239812312', '4dm1n15tr4t0r', 1, '2019-03-12 17:16:29'),
+(5, 'Anne', 'anne', '90b8de4051f02b7a29484341f3a903e1b2c6a233f5465e19c634535c7b315e6f', 'Marisse', 'S', 'amarisse.global@megaworldcorp.com', '091231231924', 'r36u14ru53r', 1, '2019-03-12 17:31:06'),
+(6, 'Darnell', 'nell', '604de9dbdb1909b6ad941a1a52b06e83c09750c0afb18726eca4cb943b9b91e2', 'Nacario', 'Corpuz', 'dnacario.k1194123@umak.edu.ph', '091239123912', 'r36u14ru53r', 1, '2019-03-12 17:33:33'),
+(7, 'Roniel', 'roniel', 'a8c0808d025da1aff2a2ffdc70d4f5159df705d95b5e9a299628cc1a299e283f', 'Canto', 'M', 'rcanto.global@megaworldcorp.com', '012931092312312', 'r36u14ru53r', 1, '2019-03-12 17:33:53'),
+(8, 'Ivan', 'ivan', 'cd0b9452fc376fc4c35a60087b366f70d883fc901524daf1f122fbd319384f6a', 'Correa', 'X', 'ivan@ue.com', '091283182312', 'r36u14ru53r', 0, '2019-03-12 17:32:33');
 
 --
 -- Indexes for dumped tables
@@ -75,7 +91,7 @@ ALTER TABLE `u553r5`
 -- AUTO_INCREMENT for table `u553r5`
 --
 ALTER TABLE `u553r5`
-  MODIFY `u553r5_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `u553r5_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

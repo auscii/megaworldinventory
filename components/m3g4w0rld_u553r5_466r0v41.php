@@ -51,6 +51,8 @@ include("val/m3g4w0rld_u553r5_v4l.php");
 				    <b class="arrow"></b>
 				  </li>
 
+					<?php if ($adm1n === $m364_p051t10n) { ?>
+
 				  <li class="active">
 				    <a href="#" class="dropdown-toggle">
 				      <i class="menu-icon fa fa-users"></i>
@@ -77,6 +79,8 @@ include("val/m3g4w0rld_u553r5_v4l.php");
 				      </li>
 				    </ul>
 				  </li>
+
+				 <?php } ?>
 
 
 				  <li class="">
@@ -155,7 +159,6 @@ include("val/m3g4w0rld_u553r5_v4l.php");
 														<th class="text-center">Fullname</th>
 														<th class="text-center">Email Address</th>
 														<th class="text-center">Contact number</th>
-														<th class="text-center">Approval</th>
 														<th class="text-center">Date Registered</th>
 														<th class="text-center">Action</th>
 													</tr>
@@ -183,6 +186,7 @@ include("val/m3g4w0rld_u553r5_v4l.php");
 														<td class="text-center"><?php echo $m3g4w0rld_u553r5_fname. " " . $m3g4w0rld_u553r5_mname . " " . $m3g4w0rld_u553r5_lname; ?></td>
 														<td class="text-center"><?php echo $m3g4w0rld_u553r5_email; ?></td>
 														<td class="text-center"><?php echo $m3g4w0rld_u553r5_contact; ?></td>
+														<td class="text-center"><?php echo $m3g4w0rld_u553r5_date; ?></td>
 														<td class="text-center">
 																<?php
 																if ($m3g4w0rld_u553r5_active === "1") {
@@ -192,45 +196,24 @@ include("val/m3g4w0rld_u553r5_v4l.php");
 																		// echo '<span class="label label-danger"><i class="fa fa-exclamation-circle"></i> INACTIVE</span>';
 																?>
 																<form method="POST">
-																			<input type="hidden" name="m364_4ppr0v4l_y3s" id="m364_4ppr0v4l_y3s" value="1" />
-																			<input type="hidden" name="m364_4ppr0v4l_n0" id="m364_4ppr0v4l_n0" value="0" />
+																			<!-- <input type="hidden" name="m364_4ppr0v4l_y3s" id="m364_4ppr0v4l_y3s" value="1" />
+																			<input type="hidden" name="m364_4ppr0v4l_n0" id="m364_4ppr0v4l_n0" value="0" /> -->
 																			<input type="hidden" name="m364_4ppr0v4l_st4tus" id="m364_4ppr0v4l_st4tus" />
-																			
-																			<button type="submit" class="label label-success label-white middle" onclick="yesApproval();">
+																			<input type="hidden" name="m364_4ppr0v4l_k3y" id="m364_4ppr0v4l_k3y" />
+																			<input type="hidden" name="m364_4ppr0v4l_4n5" id="m364_4ppr0v4l_4n5" />
+
+																			<button type="submit" class="label label-success label-white middle"
+																				onclick="userApproval('<?php echo $m3g4w0rld_u553r5_id; ?>', 1);">
 																				<i class="ace-icon fa fa-check-circle bigger-120"></i>
 																				Yes
 																			</button> &nbsp;
-																			<button type="submit" class="label label-danger label-white middle" onclick="noApproval();">
+																			<button type="submit" class="label label-danger label-white middle"
+																				onclick="userApproval('<?php echo $m3g4w0rld_u553r5_id; ?>', 0);">
 																				<i class="ace-icon fa fa-times-circle bigger-120"></i>
 																				No
 																			</button>
 																</form>
 																<?php } ?>
-														</td>
-														<td class="text-center"><?php echo $m3g4w0rld_u553r5_date; ?></td>
-														<td class="text-center">
-															<div class="hidden-sm hidden-xs action-buttons">
-																<a class="green" title="Edit"
-															     href="#addModal" role="button" data-toggle="modal"
-															   	 onclick="editUsers('<?php echo $row['u553r5_id'] ; ?>',
-																											'<?php echo $row['u553r5_fname'] ?>',
-																											'<?php echo $row['u553r5_lname'] ?>',
-																											'<?php echo $row['u553r5_mname'] ?>',
-																											'<?php echo $row['u553r5_email'] ?>',
-																											'<?php echo $row['u553r5_contact'] ?>',
-																											'<?php echo $row['u553r5_uname'] ?>',
-																											'<?php echo $row['u553r5_upass'] ?>');"
-																>
-																	<i class="ace-icon fa fa-pencil bigger-130"></i>
-																</a>
-																<a class="red" title="Delete"
-																	 href="#delete-modal" role="button" data-toggle="modal"
-															   	 onclick="deleteUsers('<?php echo $row['u553r5_id'] ?>');"
-																	 >
-																	<i class="ace-icon fa fa-trash-o bigger-130"></i>
-																</a>
-															</div>
-
 														</td>
 													</tr>
 												<?php } ?>
@@ -271,12 +254,10 @@ include("val/m3g4w0rld_u553r5_v4l.php");
 		</div><!-- /.main-container -->
 
 		<script>
-			function yesApproval() {
-
-			}
-
-			function noApproval() {
-
+			function userApproval(id,app) {
+				$("#m364_4ppr0v4l_st4tus").val("updateuserapproval") ;
+				$("#m364_4ppr0v4l_k3y").val(id) ;
+				$("#m364_4ppr0v4l_4n5").val(app) ;
 			}
 		</script>
 

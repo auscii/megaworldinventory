@@ -1,6 +1,8 @@
 <?php
 session_start();
 
+$m3g4w0rld_4ct1v3 = 1;
+
 if (!empty($_POST['m3g4w0rld_u553r5_u53r'])) {
 	  $m3g4w0rld_u553r5_u53r = $_POST['m3g4w0rld_u553r5_u53r'];
 } else {
@@ -13,9 +15,6 @@ if (!empty($_POST['m3g4w0rld_u553r5_p455'])) {
 } else {
 		$m3g4w0rld_u553r5_p455 = "";
 }
-
-
-
 
 if (!empty($_POST['reg_u553r5_fname'])) {
      $reg_u553r5_fname = $_POST['reg_u553r5_fname'];
@@ -109,11 +108,16 @@ if (isset($_POST['m3g4w0rld_u553r5_r3615t3r_6utt0n'])) {
 
 if (isset($_POST['m3g4w0rld_u553r5_1061n_6utt0n'])) {
 		$xcon->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		$m364 = $xcon->prepare("SELECT * FROM u553r5 WHERE u553r5_uname = :m3g4w0rld_u553r5_u53r AND u553r5_upass = :m3g4w0rld_u553r5_p455");
+		$m364 = $xcon->prepare("SELECT * FROM u553r5 WHERE
+														u553r5_uname = :m3g4w0rld_u553r5_u53r AND
+														u553r5_upass = :m3g4w0rld_u553r5_p455 AND
+														u553r5_active = :m3g4w0rld_4ct1v3
+													");
 		$m364->execute(
         array(
             'm3g4w0rld_u553r5_u53r'      		 	 => $m3g4w0rld_u553r5_u53r,
-            'm3g4w0rld_u553r5_p455'      		   => $m3g4w0rld_u553r5_p455
+            'm3g4w0rld_u553r5_p455'      		   => $m3g4w0rld_u553r5_p455,
+						'm3g4w0rld_4ct1v3'								 => $m3g4w0rld_4ct1v3
         )
     );
 		$row = $m364->fetch(PDO::FETCH_ASSOC);
@@ -128,15 +132,15 @@ if (isset($_POST['m3g4w0rld_u553r5_1061n_6utt0n'])) {
         $_SESSION['m364_c0nt4ct']=$row['u553r5_contact'];
         $_SESSION['m364_1d']=$row['u553r5_id'] ;
         $_SESSION['m364_4ct1v3']=$row['u553r5_active'] ;
+        $_SESSION['m364_p051t10n']=$row['u553r5_position'] ;
         $_SESSION['m364_53c5r1ty']="01787amk038894kk";
 
-        // $user_Position = $row['erovoutika_position'];
-        // if($user_Position === "Administrator"){
-        //     header("Location: admin/erovoutika_admin.php");
+        // $user_position = $row['positon'];
+        // if($user_position === "Administrator"){
+        //     header("Location: admin.php");
         // }
-        // else if($user_Position === "Customer"){
-        //     header("Location: erovoutika_main.php");
-        //     $_SESSION['erv_customer_user']="!erv0123klqiwoeiq12830zxcaq23h@";
+        // else if($user_position === "User"){
+        //     header("Location: user.php");
         // }
 				header("Location: components/m3g4w0rld_m41n.php");
 				exit();

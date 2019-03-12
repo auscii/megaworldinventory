@@ -51,6 +51,8 @@ include("val/m3g4w0rld_m41n_v4l.php");
 				    <b class="arrow"></b>
 				  </li>
 
+					<?php if ($adm1n === $m364_p051t10n) { ?>
+
 				  <li class="">
 				    <a href="#" class="dropdown-toggle">
 				      <i class="menu-icon fa fa-users"></i>
@@ -77,6 +79,8 @@ include("val/m3g4w0rld_m41n_v4l.php");
 				      </li>
 				    </ul>
 				  </li>
+
+					<?php } ?>
 
 
 				  <li class="active">
@@ -159,6 +163,11 @@ include("val/m3g4w0rld_m41n_v4l.php");
 											</div>
 										</div>
 								</div>
+
+								<button href="#addModal" onclick="addEmployee();" role="button" data-toggle="modal" class="btn btn-white btn-primary btn-bold">
+									<i class="ace-icon fa fa-plus-circle bigger-120 blue"></i>
+									Add New Employee
+								</button>
 
 											<table id="dynamic-table" class="table table-striped table-bordered table-hover text-top-5x">
 												<thead>
@@ -285,6 +294,130 @@ include("val/m3g4w0rld_m41n_v4l.php");
 				<i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
 			</a>
 		</div><!-- /.main-container -->
+
+
+		<div id="addModal" class="modal fade" tabindex="-1">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						<h3 class="smaller lighter blue no-margin" id="m3g4w0rld_u553r5_m0d4l_label"></h3>
+					</div>
+
+					<form method="POST" id="userForm">
+
+						<input type="hidden" name="m3g4w0rld_5t4tu5" id="m3g4w0rld_5t4tu5" />
+						<input type="hidden" name="u553r5_key" id="u553r5_key" />
+
+							<div class="modal-body" style="margin: auto; text-align: center;">
+
+								<div class="form-group has-info">
+									<label for="inputInfo" class="col-xs-12 col-sm-3 control-label no-padding-right">Username</label>
+									<div class="col-xs-12 col-sm-5">
+										<span class="block input-icon input-icon-right">
+											<input type="text" id="u553r5_uname" name="u553r5_uname" placeholder="Enter Username" style="width: 350px;" required />
+										</span>
+									</div>
+									<div class="help-block col-xs-12 col-sm-reset inline"> </div>
+								</div> <br />
+
+								<div class="form-group has-info">
+									<label for="inputInfo" class="col-xs-12 col-sm-3 control-label no-padding-right">Password</label>
+									<div class="col-xs-12 col-sm-5">
+										<span class="block input-icon input-icon-right">
+											<input type="password" id="u553r5_upass" name="u553r5_upass" placeholder="Enter Password" style="width: 350px;" required />
+										</span>
+									</div>
+									<div class="help-block col-xs-12 col-sm-reset inline"> </div>
+								</div> <br />
+
+								<div class="form-group has-info">
+									<label for="inputInfo" class="col-xs-12 col-sm-3 control-label no-padding-right">Confirm Password</label>
+									<div class="col-xs-12 col-sm-5">
+										<span class="block input-icon input-icon-right">
+											<input type="password" id="u553r5_conf_upass" name="u553r5_conf_upass" placeholder="Confirm your Password" style="width: 350px;" required />
+										</span>
+									</div>
+									<div class="help-block col-xs-12 col-sm-reset inline"> </div>
+								</div> <br />
+
+									<div class="form-group has-info">
+										<label for="inputInfo" class="col-xs-12 col-sm-3 control-label no-padding-right">First Name</label>
+										<div class="col-xs-12 col-sm-5">
+											<span class="block input-icon input-icon-right">
+												<input type="text" id="u553r5_fname" name="u553r5_fname" placeholder="Enter First Name" style="width: 350px;" required />
+											</span>
+										</div>
+										<div class="help-block col-xs-12 col-sm-reset inline"> </div>
+									</div> <br />
+
+									<div class="form-group has-info">
+										<label for="inputInfo" class="col-xs-12 col-sm-3 control-label no-padding-right">Last Name</label>
+										<div class="col-xs-12 col-sm-5">
+											<span class="block input-icon input-icon-right">
+												<input type="text" id="u553r5_lname" name="u553r5_lname" placeholder="Enter Last Name" style="width: 350px;" required  />
+											</span>
+										</div>
+										<div class="help-block col-xs-12 col-sm-reset inline"> </div>
+									</div> <br />
+
+									<div class="form-group has-info">
+										<label for="inputInfo" class="col-xs-12 col-sm-3 control-label no-padding-right">Middle Name</label>
+										<div class="col-xs-12 col-sm-5">
+											<span class="block input-icon input-icon-right">
+												<input type="text" id="u553r5_mname" name="u553r5_mname" placeholder="Enter Middle Name" style="width: 350px;" required />
+											</span>
+										</div>
+										<div class="help-block col-xs-12 col-sm-reset inline"> </div>
+									</div> <br />
+
+									<div class="form-group has-info">
+										<label for="inputInfo" class="col-xs-12 col-sm-3 control-label no-padding-right">Email Address</label>
+										<div class="col-xs-12 col-sm-5">
+											<span class="block input-icon input-icon-right">
+												<input type="email" id="u553r5_email" name="u553r5_email" placeholder="Enter Email Address" style="width: 350px;" required />
+											</span>
+										</div>
+										<div class="help-block col-xs-12 col-sm-reset inline"> </div>
+									</div> <br />
+
+									<div class="form-group has-info">
+										<label for="inputInfo" class="col-xs-12 col-sm-3 control-label no-padding-right">Email Contact Number</label>
+										<div class="col-xs-12 col-sm-5">
+											<span class="block input-icon input-icon-right">
+												<input type="number" id="u553r5_contact" name="u553r5_contact" placeholder="Enter Contact Number" style="width: 350px;" required />
+											</span>
+										</div>
+										<div class="help-block col-xs-12 col-sm-reset inline"> </div>
+									</div> <br />
+
+								</div>
+
+								<div class="modal-footer" style="margin: auto; text-align: center;">
+									<button type="submit" class="btn btn-sm btn-success">
+										<i class="ace-icon fa fa-check"></i>
+										Submit
+									</button> &nbsp; &nbsp;
+									<button class="btn btn-sm btn-primary" data-dismiss="modal">
+										<i class="ace-icon fa fa-times"></i>
+										Cancel
+									</button>
+								</div>
+
+							</form>
+
+						</div><!-- /.modal-content -->
+					</div><!-- /.modal-dialog -->
+				</div>
+
+				<script>
+				function addEmployee()
+				{
+							$("#m3g4w0rld_u553r5_m0d4l_label").html("Add New Employee") ;
+							$("#m3g4w0rld_5t4tu5").val("addemployee") ;
+							// $("#u553r5_fname").val("") ;
+				}
+				</script>
 
 		<script src="../assets/js/jquery-2.1.4.min.js"></script>
 		<script type="text/javascript">

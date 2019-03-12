@@ -2,6 +2,13 @@
 // include("../inc/m3g4w0rld_c0mm0n.php");
 session_start();
 
+// if (!empty($_POST['u553r5_position'])) {
+//     $u553r5_position = "r36u14ru53r";
+// } else {
+//     $u553r5_position = "";
+// }
+$u553r5_position = "r36u14ru53r";
+
 if (!empty($_SESSION['m364_53c5r1ty'])) {
     $m364_53c5r1ty = $_SESSION['m364_53c5r1ty'];
 } else {
@@ -65,6 +72,12 @@ if (!empty($_SESSION['m364_53c5r1ty'])) {
     $m364_53c5r1ty = $_SESSION['m364_53c5r1ty'];
 } else {
     $m364_53c5r1ty = "";
+}
+
+if (!empty($_SESSION['m364_p051t10n'])) {
+    $m364_p051t10n = $_SESSION['m364_p051t10n'];
+} else {
+    $m364_p051t10n = "";
 }
 
 if ($m364_53c5r1ty != "01787amk038894kk") {
@@ -148,6 +161,50 @@ if (!empty($_POST['u553r5_key_d3l3t3'])) {
 		$u553r5_key_d3l3t3 = "";
 }
 
+if (!empty($_POST['m364_4ppr0v4l_4n5'])) {
+    $m364_4ppr0v4l_4n5 = $_POST['m364_4ppr0v4l_4n5'];
+} else {
+    $m364_4ppr0v4l_4n5 = "";
+}
+
+// if (!empty($_POST['m364_4ppr0v4l_y3s'])) {
+//     $m364_4ppr0v4l_y3s = $_POST['m364_4ppr0v4l_y3s'];
+// } else {
+//     $m364_4ppr0v4l_y3s = "";
+// }
+//
+// if (!empty($_POST['m364_4ppr0v4l_n0'])) {
+//     $m364_4ppr0v4l_n0 = $_POST['m364_4ppr0v4l_n0'];
+// } else {
+//     $m364_4ppr0v4l_n0 = "";
+// }
+
+if (!empty($_POST['m364_4ppr0v4l_st4tus'])) {
+    $m364_4ppr0v4l_st4tus = $_POST['m364_4ppr0v4l_st4tus'];
+} else {
+    $m364_4ppr0v4l_st4tus = "";
+}
+
+if (!empty($_POST['m364_4ppr0v4l_k3y'])) {
+    $m364_4ppr0v4l_k3y = $_POST['m364_4ppr0v4l_k3y'];
+} else {
+    $m364_4ppr0v4l_k3y = "";
+}
+
+
+if ($m364_4ppr0v4l_st4tus == "updateuserapproval") {
+    $m3g4w0rld_5t5t3m3nt = $xcon->prepare("UPDATE u553r5 SET
+                                           u553r5_active = :u553r5_active
+                                           WHERE u553r5_id = $m364_4ppr0v4l_k3y;
+                                        ");
+    $m3g4w0rld_5t5t3m3nt->execute(
+        array(
+            'u553r5_active'             => $m364_4ppr0v4l_4n5,
+        )
+    );
+    $m3g4w0rld_5t5t3m3nt->fetchAll();
+}
+
 
 
 if($m3g4w0rld_5t4tu5 == "addusers"){
@@ -164,7 +221,8 @@ if($m3g4w0rld_5t4tu5 == "addusers"){
 				                                        u553r5_email,
 				                                        u553r5_contact,
 																								u553r5_uname,
-																								u553r5_upass
+																								u553r5_upass,
+                                                u553r5_position
 				                                        )
 				                                        VALUES (
 				                                        :u553r5_fname,
@@ -173,7 +231,8 @@ if($m3g4w0rld_5t4tu5 == "addusers"){
 				                                        :u553r5_email,
 				                                        :u553r5_contact,
 																								:u553r5_uname,
-																								:u553r5_upass
+																								:u553r5_upass,
+                                                :u553r5_position
 				                                        )");
 				    $m3g4w0rld_5t5t3m3nt->execute(
 				        array(
@@ -183,7 +242,8 @@ if($m3g4w0rld_5t4tu5 == "addusers"){
 				            'u553r5_email'       			 => $u553r5_email,
 				            'u553r5_contact'      		 => $u553r5_contact,
 				            'u553r5_uname'      		 	 => $u553r5_uname,
-				            'u553r5_upass'      		   => $u553r5_upass
+				            'u553r5_upass'      		   => $u553r5_upass,
+                    'u553r5_position'          => $u553r5_position
 				        )
 				    );
 				    $m3g4w0rld_5t5t3m3nt->fetchAll();
