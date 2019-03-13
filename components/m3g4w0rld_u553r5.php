@@ -214,13 +214,12 @@ include("val/m3g4w0rld_u553r5_v4l.php");
 																	<i class="ace-icon fa fa-pencil bigger-130"></i>
 																</a>
 																<a class="red" title="Delete"
-																	 href="#delete-modal" role="button" data-toggle="modal"
+																	 href="#deleteModal" role="button" data-toggle="modal"
 															   	 onclick="deleteUsers('<?php echo $row['u553r5_id'] ?>');"
 																	 >
 																	<i class="ace-icon fa fa-trash-o bigger-130"></i>
 																</a>
 															</div>
-
 														</td>
 													</tr>
 												<?php } ?>
@@ -382,7 +381,7 @@ include("val/m3g4w0rld_u553r5_v4l.php");
 		</div>
 
 <!-- Delete Modal -->
-		<div id="delete-modal" class="modal fade" tabindex="-1">
+		<div id="deleteModal" class="modal fade" tabindex="-1">
 			<div class="modal-dialog">
 				<div class="modal-content">
 					<div class="modal-header">
