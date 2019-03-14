@@ -176,7 +176,7 @@ include("val/m3g4w0rld_1nv3nt0ry_v4l.php");
 											<table id="dynamic-table" class="table table-striped table-bordered table-hover text-top-5x">
 												<thead>
 													<tr>
-														<th class="center">#</th>
+														<th class="center">ID</th>
 														<th class="text-center">Fullname</th>
 														<th class="text-center">Email Address</th>
 														<th class="text-center">Birthdate</th>
@@ -185,29 +185,59 @@ include("val/m3g4w0rld_1nv3nt0ry_v4l.php");
 														<th class="text-center">Action</th>
 													</tr>
 												</thead>
-
 												<tbody>
 													<?php
-											    $m3g4w0rld_empl0y335_c0unt = 0;
-											    $xcon->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-											    $result = $xcon->prepare("SELECT * FROM 3mpl0y335 WHERE empl0y335_creator_no = $m364_1d");
-											    $result->execute();
-											        while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
-											               $m3g4w0rld_empl0y335_c0unt++;
-											               $m3g4w0rld_empl0y335_fname = $row['empl0y335_fname'];
-											               $m3g4w0rld_empl0y335_mname = $row['empl0y335_mname'];
-											               $m3g4w0rld_empl0y335_lname = $row['empl0y335_lname'];
-											               $m3g4w0rld_empl0y335_age = $row['empl0y335_age'];
-											               $m3g4w0rld_empl0y335_bdate = $row['empl0y335_bdate'];
-											               $m3g4w0rld_empl0y335_email = $row['empl0y335_email'];
-											               $m3g4w0rld_empl0y335_contact = $row['empl0y335_contact'];
-											               $m3g4w0rld_empl0y335_address = $row['empl0y335_address'];
-											               $m3g4w0rld_empl0y335_country = $row['empl0y335_country'];
-											               $m3g4w0rld_empl0y335_status = $row['empl0y335_status'];
-											               $m3g4w0rld_empl0y335_date = $row['empl0y335_date'];
+													if (isset($_POST['emp_key_btn_search'])) {
+
+														  // get first 3 characters
+															// $result = substr($myStr, 0, 5);
+
+															// get last 3 characters
+															// $asd = "Hello";
+															// $new = substr($asd, -3);
+															// echo $new;
+
+
+										    // $xcon->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+ 										    // $result = $xcon->prepare("SELECT * FROM 3mpl0y335 WHERE empl0y335_creator_no = $m364_1d
+												// 													AND empl0y335_fname LIKE ? OR empl0y335_lname LIKE ?");
+										    // $result->execute(array("%$emp_search%","%$emp_search%"));
+										    //        while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+										    //             $res_empl0y335_fname = $row['empl0y335_fname'];
+					 							//             $res_empl0y335_lname = $row['empl0y335_lname'];
+												//
+												// 						$first_empl0y335_fname = substr($res_empl0y335_fname, 0, 3);
+												// 						$last_empl0y335_lname = substr($res_empl0y335_lname, -3);
+												//
+												// 						$s34rch_empl0y335_k3yword = $first_empl0y335_fname . " " . $last_empl0y335_lname;
+												//
+																	  $m3g4w0rld_empl0y335_c0unt = 0;
+																		$m3g4w0rld_5t5t3m3nt = $xcon->prepare("SELECT * FROM 3mpl0y335 WHERE empl0y335_creator_no = $m364_1d
+																			 														         AND empl0y335_fname LIKE ? OR empl0y335_lname LIKE ?");
+
+															// $emp_search
+															// $s34rch_empl0y335_k3yword
+															$m3g4w0rld_5t5t3m3nt->execute(array("%$emp_search%","%$emp_search%"));
+															$m3g4w0rld_534arch_result = $m3g4w0rld_5t5t3m3nt->fetchAll();
+
+															if ($m3g4w0rld_534arch_result) {
+																	foreach($m3g4w0rld_534arch_result as $row) {
+																          $m3g4w0rld_empl0y335_c0unt++;
+															            $m3g4w0rld_empl0y335_id = $row['empl0y335_id'];
+															            $m3g4w0rld_empl0y335_fname = $row['empl0y335_fname'];
+															            $m3g4w0rld_empl0y335_mname = $row['empl0y335_mname'];
+															            $m3g4w0rld_empl0y335_lname = $row['empl0y335_lname'];
+															            $m3g4w0rld_empl0y335_age = $row['empl0y335_age'];
+															            $m3g4w0rld_empl0y335_bdate = $row['empl0y335_bdate'];
+															            $m3g4w0rld_empl0y335_email = $row['empl0y335_email'];
+															            $m3g4w0rld_empl0y335_contact = $row['empl0y335_contact'];
+															            $m3g4w0rld_empl0y335_address = $row['empl0y335_address'];
+															            $m3g4w0rld_empl0y335_country = $row['empl0y335_country'];
+															            $m3g4w0rld_empl0y335_status = $row['empl0y335_status'];
+															            $m3g4w0rld_empl0y335_date = $row['empl0y335_date'];
 											    ?>
 													<tr>
-													  <td class="text-center"><?php echo $m3g4w0rld_empl0y335_c0unt; ?></td>
+														<td class="text-center"><?php echo $m3g4w0rld_empl0y335_id; ?></td>
 														<td class="text-center"><?php echo $m3g4w0rld_empl0y335_fname. " " . $m3g4w0rld_empl0y335_mname . " " . $m3g4w0rld_empl0y335_lname; ?></td>
 														<td class="text-center"><?php echo $m3g4w0rld_empl0y335_email; ?></td>
 														<td class="text-center"><?php echo $m3g4w0rld_empl0y335_bdate; ?></td>
@@ -215,7 +245,7 @@ include("val/m3g4w0rld_1nv3nt0ry_v4l.php");
 														<td class="text-center"><?php echo $m3g4w0rld_empl0y335_contact; ?></td>
 														<td class="text-center">
 															<div class="hidden-sm hidden-xs action-buttons">
-																<a class="green" title="Edit"
+																<a class="blue" title="Edit"
 															     href="#addModal" role="button" data-toggle="modal"
 															   	 onclick="editEmployee('<?php echo $row['empl0y335_id'] ; ?>',
 																												 '<?php echo $row['empl0y335_fname'] ?>',
@@ -228,7 +258,7 @@ include("val/m3g4w0rld_1nv3nt0ry_v4l.php");
 																												 '<?php echo $row['empl0y335_address'] ?>',
 																												 '<?php echo $row['empl0y335_country'] ?>');"
 																>
-																	<i class="ace-icon fa fa-pencil bigger-130"></i>
+																	<i class="ace-icon fa fa-eye bigger-130"></i>
 																</a>
 																<a class="red" title="Delete"
 																	 href="#deleteModal" role="button" data-toggle="modal"
@@ -240,21 +270,30 @@ include("val/m3g4w0rld_1nv3nt0ry_v4l.php");
 														</td>
 													</tr>
 												</tbody>
-											<?php } ?>
+											<?php } }
+											//}
+										//}  ?>
+
+											<?php }
+											//else { ?>
 											</table>
+
+											<!-- <div class="alert alert-warning" style="height: 20%; width: 300px; margin: auto;">
+												<button type="button" class="close" data-dismiss="alert">
+													<i class="ace-icon fa fa-times"></i>
+												</button>
+												<i class="ace-icon fa fa-exclamation-circle yellow"></i>
+												Search No Results
+			                </div> -->
+
+										<?php //} ?>
 									</div>
 								</div>
 							</div>
 
-
-
-										<div class="space-6"></div>
 									</div>
 
 								</div><!-- /.row -->
-
-								<div class="hr hr32 hr-dotted"></div>
-
 
 
 								<!-- PAGE CONTENT ENDS -->
@@ -316,12 +355,12 @@ include("val/m3g4w0rld_1nv3nt0ry_v4l.php");
 									<label for="inputInfo" class="col-xs-12 col-sm-3 control-label no-padding-right">First Name</label>
 										<div class="col-xs-12 col-sm-5">
 											<span class="block input-icon input-icon-right">
-												<input type="text" id="empl0y335_fname" name="empl0y335_fname" placeholder="Enter First Name" style="width: 350px;" required />
+												<input type="text" id="empl0y335_fname" name="empl0y335_fname" placeholder="Enter First Name" style="width: 350px;" />
 											</span>
 										</div>
-									<button class="btn btn-lg btn-danger pull-right" id="removeButtonInputeField_1" style="border-radius: 15px; height: 40px;">
+									<a class="btn btn-lg btn-danger pull-right" id="removeButtonInputeField_1" style="border-radius: 15px; height: 40px;">
 										<i class="ace-icon fa fa-times" style="margin: auto;"></i>
-									</button>
+									</a>
 									<div class="help-block col-xs-12 col-sm-reset inline"> </div>
 								</div> <br />
 
@@ -342,7 +381,7 @@ include("val/m3g4w0rld_1nv3nt0ry_v4l.php");
 									<label for="inputInfo" class="col-xs-12 col-sm-3 control-label no-padding-right">Middle Name</label>
 											<div class="col-xs-12 col-sm-5">
 												<span class="block input-icon input-icon-right">
-														<input type="text" id="empl0y335_mname" name="empl0y335_mname" placeholder="Enter Middle Name" style="width: 350px;" required />
+														<input type="text" id="empl0y335_mname" name="empl0y335_mname" placeholder="Enter Middle Name" style="width: 350px;" />
 												</span>
 											</div>
 										<button class="btn btn-lg btn-danger pull-right" id="removeButtonInputeField_2" style="border-radius: 15px; height: 40px;">
@@ -355,7 +394,7 @@ include("val/m3g4w0rld_1nv3nt0ry_v4l.php");
 									<label for="inputInfo" class="col-xs-12 col-sm-3 control-label no-padding-right">Last Name</label>
 									<div class="col-xs-12 col-sm-5">
 										<span class="block input-icon input-icon-right">
-											<input type="text" id="empl0y335_lname" name="empl0y335_lname" placeholder="Enter your Last Name" style="width: 350px;" required />
+											<input type="text" id="empl0y335_lname" name="empl0y335_lname" placeholder="Enter your Last Name" style="width: 350px;" />
 										</span>
 									</div>
 										<button class="btn btn-lg btn-danger pull-right" id="removeButtonInputeField_3" style="border-radius: 15px; height: 40px;">
@@ -368,7 +407,7 @@ include("val/m3g4w0rld_1nv3nt0ry_v4l.php");
 										<label for="inputInfo" class="col-xs-12 col-sm-3 control-label no-padding-right">Age</label>
 										<div class="col-xs-12 col-sm-5">
 											<span class="block input-icon input-icon-right">
-												<input type="number" id="empl0y335_age" name="empl0y335_age" placeholder="Enter Age" style="width: 350px;" required />
+												<input type="number" id="empl0y335_age" name="empl0y335_age" placeholder="Enter Age" style="width: 350px;" />
 											</span>
 										</div>
 										<button class="btn btn-lg btn-danger pull-right" id="removeButtonInputeField_4" style="border-radius: 15px; height: 40px;">
@@ -381,7 +420,7 @@ include("val/m3g4w0rld_1nv3nt0ry_v4l.php");
 										<label for="inputInfo" class="col-xs-12 col-sm-3 control-label no-padding-right">Birthdate</label>
 										<div class="col-xs-12 col-sm-5">
 											<span class="block input-icon input-icon-right">
-												<input type="date" id="empl0y335_bdate" name="empl0y335_bdate" placeholder="Enter Birthdate" style="width: 350px;" required  />
+												<input type="date" id="empl0y335_bdate" name="empl0y335_bdate" placeholder="Enter Birthdate" style="width: 350px;"  />
 											</span>
 										</div>
 											<button class="btn btn-lg btn-danger pull-right" id="removeButtonInputeField_5" style="border-radius: 15px; height: 40px;">
@@ -394,7 +433,7 @@ include("val/m3g4w0rld_1nv3nt0ry_v4l.php");
 										<label for="inputInfo" class="col-xs-12 col-sm-3 control-label no-padding-right">Email Address</label>
 										<div class="col-xs-12 col-sm-5">
 											<span class="block input-icon input-icon-right">
-												<input type="email" id="empl0y335_email" name="empl0y335_email" placeholder="Enter Email Address" style="width: 350px;" required />
+												<input type="email" id="empl0y335_email" name="empl0y335_email" placeholder="Enter Email Address" style="width: 350px;" />
 											</span>
 										</div>
 											<button class="btn btn-lg btn-danger pull-right" id="removeButtonInputeField_6" style="border-radius: 15px; height: 40px;">
@@ -407,7 +446,7 @@ include("val/m3g4w0rld_1nv3nt0ry_v4l.php");
 										<label for="inputInfo" class="col-xs-12 col-sm-3 control-label no-padding-right">Contact Number</label>
 										<div class="col-xs-12 col-sm-5">
 											<span class="block input-icon input-icon-right">
-												<input type="number" id="empl0y335_contact" name="empl0y335_contact" placeholder="Enter Contact Number" style="width: 350px;" required />
+												<input type="number" id="empl0y335_contact" name="empl0y335_contact" placeholder="Enter Contact Number" style="width: 350px;" />
 											</span>
 										</div>
 											<button class="btn btn-lg btn-danger pull-right" id="removeButtonInputeField_7" style="border-radius: 15px; height: 40px;">
@@ -420,7 +459,7 @@ include("val/m3g4w0rld_1nv3nt0ry_v4l.php");
 										<label for="inputInfo" class="col-xs-12 col-sm-3 control-label no-padding-right">Address</label>
 										<div class="col-xs-12 col-sm-5">
 											<span class="block input-icon input-icon-right">
-												<input type="text" id="empl0y335_address" name="empl0y335_address" placeholder="Enter Address" style="width: 350px;" required />
+												<input type="text" id="empl0y335_address" name="empl0y335_address" placeholder="Enter Address" style="width: 350px;" />
 											</span>
 										</div>
 											<button class="btn btn-lg btn-danger pull-right" id="removeButtonInputeField_8" style="border-radius: 15px; height: 40px;">
@@ -433,7 +472,7 @@ include("val/m3g4w0rld_1nv3nt0ry_v4l.php");
 										<label for="inputInfo" class="col-xs-12 col-sm-3 control-label no-padding-right">Country</label>
 										<div class="col-xs-12 col-sm-5">
 											<span class="block input-icon input-icon-right">
-												<input type="text" id="empl0y335_country" name="empl0y335_country" placeholder="Enter Country" style="width: 350px;" required />
+												<input type="text" id="empl0y335_country" name="empl0y335_country" placeholder="Enter Country" style="width: 350px;" />
 											</span>
 										</div>
 											<button class="btn btn-lg btn-danger pull-right" id="removeButtonInputeField_9" style="border-radius: 15px; height: 40px;">
@@ -442,26 +481,10 @@ include("val/m3g4w0rld_1nv3nt0ry_v4l.php");
 										<div class="help-block col-xs-12 col-sm-reset inline"> </div>
 									</div> <br />
 
-									<!-- <div class="form-group has-info" id="emp_InputField_9">
-										<label for="inputInfo" class="col-xs-12 col-sm-3 control-label no-padding-right">Country</label>
-										<div class="col-xs-12 col-sm-5">
-											<span class="block input-icon input-icon-right">
-												<input type="text" id="empl0y335_country" name="empl0y335_country" placeholder="Enter Country" style="width: 350px;" required />
-											</span>
-												<button class="btn btn-lg btn-danger pull-right" id="removeButtonInputeField_9" style="border-radius: 15px; height: 40px;">
-													<i class="ace-icon fa fa-times" style="margin: auto;"></i>
-												</button>
-										</div>
-										<div class="help-block col-xs-12 col-sm-reset inline"> </div>
-									</div> <br /> -->
-
-
-
-
 								</div>
 
 								<div class="modal-footer" style="margin: auto; text-align: center;">
-									<button type="submit" class="btn btn-sm btn-success">
+									<button type="submit" name="invensubm1t_01010101" class="btn btn-sm btn-success">
 										<i class="ace-icon fa fa-check"></i>
 										Submit
 									</button> &nbsp; &nbsp;
@@ -542,10 +565,12 @@ include("val/m3g4w0rld_1nv3nt0ry_v4l.php");
 
 				  $("#removeButtonInputeField_1").click(function(){
 				    $("#emp_InputField_1").remove();
+						return;
 				  });
 
 					$("#removeButtonInputeField_2").click(function(){
 				    $("#emp_InputField_2").remove();
+						return;
 				  });
 
 					$("#removeButtonInputeField_3").click(function(){
@@ -607,15 +632,16 @@ include("val/m3g4w0rld_1nv3nt0ry_v4l.php");
 							$("#empl0y335_contact").val(contact) ;
 							$("#empl0y335_address").val(address) ;
 							$("#empl0y335_country").val(country) ;
-							$('#empl0y335_fname').prop('required',false);
-							$('#empl0y335_mname').prop('required',false);
-							$('#empl0y335_lname').prop('required',false);
-							$('#empl0y335_age').prop('required',false);
-							$('#empl0y335_bdate').prop('required',false);
-							$('#empl0y335_email').prop('required',false);
-							$('#empl0y335_contact').prop('required',false);
-							$('#empl0y335_address').prop('required',false);
-							$('#empl0y335_country').prop('required',false);
+
+							// $('#empl0y335_fname').prop('required',false);
+							// $('#empl0y335_mname').prop('required',false);
+							// $('#empl0y335_lname').prop('required',false);
+							// $('#empl0y335_age').prop('required',false);
+							// $('#empl0y335_bdate').prop('required',false);
+							// $('#empl0y335_email').prop('required',false);
+							// $('#empl0y335_contact').prop('required',false);
+							// $('#empl0y335_address').prop('required',false);
+							// $('#empl0y335_country').prop('required',false);
 		    }
 
 		    function deleteEmployee(key)
@@ -701,7 +727,7 @@ include("val/m3g4w0rld_1nv3nt0ry_v4l.php");
 			 placeholder.data('draw', drawPieChart);
 
 
-			  var $tooltip = $("<div class='tooltip top in'><div class='tooltip-inner'></div></div>").hide().appendTo('body');
+			  var $tooltip = $("<div class='tooltip top in'><div class='tooltip-inner'></div></div>").remove()().appendTo('body');
 			  var previousPoint = null;
 
 			  placeholder.on('plothover', function (event, pos, item) {
@@ -713,7 +739,7 @@ include("val/m3g4w0rld_1nv3nt0ry_v4l.php");
 					}
 					$tooltip.css({top:pos.pageY + 10, left:pos.pageX + 10});
 				} else {
-					$tooltip.hide();
+					$tooltip.remove();
 					previousPoint = null;
 				}
 

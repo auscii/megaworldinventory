@@ -172,59 +172,54 @@ if (!empty($_POST['emp_search'])) {
      $emp_search = "";
 }
 
-// if (isset($_POST['emp_key_btn_search'])) {
-//     $m3g4w0rld_5t5t3m3nt = $xcon->prepare("SELECT * FROM 3mpl0y335 WHERE empl0y335_fname = :emp_search");
-//     $m3g4w0rld_5t5t3m3nt->execute(
-//         array(
-//             'emp_search'      => $emp_search
-//         )
-//     );
-//     $m3g4w0rld_5t5t3m3nt->fetchAll();
-// }
 
-if($m3g4w0rld_5t4tu5 === "addemployee"){
-    // move_uploaded_file($_FILES["upload_pic"]["tmp_name"],"images/" . $_FILES["upload_pic"]["name"]);
-    // $imageLocation=$_FILES["upload_pic"]["name"];
-    $m3g4w0rld_5t5t3m3nt = $xcon->prepare("INSERT INTO 3mpl0y335 (
-                                        empl0y335_fname,
-                                        empl0y335_mname,
-                                        empl0y335_lname,
-                                        empl0y335_age,
-                                        empl0y335_bdate,
-																				empl0y335_email,
-																				empl0y335_contact,
-                                        empl0y335_address,
-                                        empl0y335_country,
-                                        empl0y335_creator_no
-                                        )
-                                        VALUES (
-                                        :empl0y335_fname,
-                                        :empl0y335_mname,
-                                        :empl0y335_lname,
-                                        :empl0y335_age,
-                                        :empl0y335_bdate,
-																				:empl0y335_email,
-																				:empl0y335_contact,
-                                        :empl0y335_address,
-                                        :empl0y335_country,
-                                        :empl0y335_creator_no
-                                        )");
-    $m3g4w0rld_5t5t3m3nt->execute(
-        array(
-            'empl0y335_fname'              => $empl0y335_fname,
-            'empl0y335_mname'   					 => $empl0y335_mname,
-            'empl0y335_lname'    				   => $empl0y335_lname,
-            'empl0y335_age'       			   => $empl0y335_age,
-            'empl0y335_bdate'      		     => $empl0y335_bdate,
-            'empl0y335_email'      		 	   => $empl0y335_email,
-            'empl0y335_contact'      		 	 => $empl0y335_contact,
-            'empl0y335_address'            => $empl0y335_address,
-            'empl0y335_country'      		   => $empl0y335_country,
-            'empl0y335_creator_no'         => $m364_1d
 
-        )
-    );
-    $m3g4w0rld_5t5t3m3nt->fetchAll();
+
+if (isset($_POST['invensubm1t_01010101'])) {
+    if($m3g4w0rld_5t4tu5 === "addemployee"){
+        // move_uploaded_file($_FILES["upload_pic"]["tmp_name"],"images/" . $_FILES["upload_pic"]["name"]);
+        // $imageLocation=$_FILES["upload_pic"]["name"];
+        $m3g4w0rld_5t5t3m3nt = $xcon->prepare("INSERT INTO 3mpl0y335 (
+                                            empl0y335_fname,
+                                            empl0y335_mname,
+                                            empl0y335_lname,
+                                            empl0y335_age,
+                                            empl0y335_bdate,
+    																				empl0y335_email,
+    																				empl0y335_contact,
+                                            empl0y335_address,
+                                            empl0y335_country,
+                                            empl0y335_creator_no
+                                            )
+                                            VALUES (
+                                            :empl0y335_fname,
+                                            :empl0y335_mname,
+                                            :empl0y335_lname,
+                                            :empl0y335_age,
+                                            :empl0y335_bdate,
+    																				:empl0y335_email,
+    																				:empl0y335_contact,
+                                            :empl0y335_address,
+                                            :empl0y335_country,
+                                            :empl0y335_creator_no
+                                            )");
+        $m3g4w0rld_5t5t3m3nt->execute(
+            array(
+                'empl0y335_fname'              => $empl0y335_fname,
+                'empl0y335_mname'   					 => $empl0y335_mname,
+                'empl0y335_lname'    				   => $empl0y335_lname,
+                'empl0y335_age'       			   => $empl0y335_age,
+                'empl0y335_bdate'      		     => $empl0y335_bdate,
+                'empl0y335_email'      		 	   => $empl0y335_email,
+                'empl0y335_contact'      		 	 => $empl0y335_contact,
+                'empl0y335_address'            => $empl0y335_address,
+                'empl0y335_country'      		   => $empl0y335_country,
+                'empl0y335_creator_no'         => $m364_1d
+
+            )
+        );
+        $m3g4w0rld_5t5t3m3nt->fetchAll();
+    }
 }
 
 if ($m3g4w0rld_5t4tu5 == "editemployee"){
@@ -266,6 +261,10 @@ if ($m3g4w0rld_5t4tu5_d3l3t3 == "deletemployee"){
     $m3g4w0rld_5t5t3m3nt->fetchAll();
 }
 
+$sql_count = "SELECT count(*) FROM u553r5 WHERE u553r5_active = 0";
+$res_count = $xcon->prepare($sql_count);
+$res_count->execute();
+$num_approv = $res_count->fetchColumn();
 
 
 

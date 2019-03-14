@@ -66,4 +66,10 @@ if (!empty($_SESSION['m364_p051t10n'])) {
     $m364_p051t10n = "";
 }
 
+
+$sql_count = "SELECT count(*) FROM u553r5 WHERE u553r5_active = 0";
+$res_count = $xcon->prepare($sql_count);
+$res_count->execute();
+$num_approv = $res_count->fetchColumn();
+
 ?>

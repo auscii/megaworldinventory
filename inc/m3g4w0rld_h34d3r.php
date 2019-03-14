@@ -22,44 +22,61 @@
         <li class="green dropdown-modal">
           <a data-toggle="dropdown" class="dropdown-toggle" href="#">
             <i class="fa fa-bell fa-2x icon-animated-bell"></i>
-            <span class="badge badge-success">0</span>
+            <span class="badge badge-success"><?php echo $num_approv; ?></span>
           </a>
 
-          <ul class="dropdown-menu-right dropdown-navbar dropdown-menu dropdown-caret dropdown-close">
-            <li class="dropdown-header">
-              <i class="ace-icon fa fa-bell icon-animated-bell"></i>
-              0 New Notifications
-            </li>
+          <ul class="dropdown-menu-right dropdown-navbar navbar-green dropdown-menu dropdown-caret dropdown-close">
+								<li class="dropdown-header">
+									<i class="ace-icon fa fa-exclamation-triangle"></i>
+									<?php echo $num_approv; ?> Need Approval(s)
+								</li>
 
-            <!-- <li class="dropdown-content">
-              <ul class="dropdown-menu dropdown-navbar">
+								<li class="dropdown-content ace-scroll" style="position: relative;"><div class="scroll-track" style="display: none;"><div class="scroll-bar"></div></div><div class="scroll-content" style="">
+									<ul class="dropdown-menu dropdown-navbar navbar-pink">
 
-                <li>
-                  <a href="#" class="clearfix">
-                    <span class="msg-body">
-                      <span class="msg-title">
-                        <span class="blue">Alex:</span>
-                        Ciao sociis natoque penatibus et auctor ...
-                      </span>
+                    <?php
+                    $m3g4w0rld_u553r5_c0unt = 0;
+                    $xcon->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                    $result = $xcon->prepare("SELECT * FROM u553r5 WHERE u553r5_active = 0");
+                    $result->execute();
+                        while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+                               $m3g4w0rld_u553r5_c0unt++;
+                               $m3g4w0rld_u553r5_4pprov_id = $row['u553r5_id'];
+                               $m3g4w0rld_u553r5_4pprov_fname = $row['u553r5_fname'];
+                               $m3g4w0rld_u553r5_4pprov_lname = $row['u553r5_lname'];
+                               $m3g4w0rld_u553r5_4pprov_mname = $row['u553r5_mname'];
+                               $m3g4w0rld_u553r5_4pprov_active = $row['u553r5_active'];
+                               $m3g4w0rld_u553r5_4pprov_date = $row['u553r5_date'];
+                    ?>
 
-                      <span class="msg-time">
-                        <i class="ace-icon fa fa-clock-o"></i>
-                        <span>a moment ago</span>
-                      </span>
-                    </span>
-                  </a>
-                </li>
+										<li>
+											<a href="../components/m3g4w0rld_u553r5_466r0v41.php">
+												<div class="clearfix">
+													<span class="pull-left">
+														<!-- <i class="btn btn-xs no-hover btn-pink fa fa-comment"></i> -->
+                            <i class="ace-icon fa fa-bell icon-animated-bell"></i> &nbsp;&nbsp;
+														<?php echo $m3g4w0rld_u553r5_4pprov_fname . " "
+                                     . $m3g4w0rld_u553r5_4pprov_mname . " "
+                                     . $m3g4w0rld_u553r5_4pprov_lname; ?>
+													</span>
+													<!-- <span class="pull-right badge badge-info">+12</span> -->
+												</div>
+											</a>
+										</li>
 
-              </ul>
-            </li> -->
+                    <?php } ?>
 
-            <li class="dropdown-footer">
-              <a href="#">
-                See all Notifications
-                <i class="ace-icon fa fa-arrow-right"></i>
-              </a>
-            </li>
-          </ul>
+									</ul>
+								</div>
+              </li>
+
+								<li class="dropdown-footer">
+									<a href="../components/m3g4w0rld_u553r5_466r0v41.php">
+										See all notifications
+										<i class="ace-icon fa fa-arrow-right"></i>
+									</a>
+								</li>
+							</ul>
         </li>
 
         <li class="light-blue dropdown-modal right-side">

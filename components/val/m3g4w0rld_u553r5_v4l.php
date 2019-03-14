@@ -285,4 +285,8 @@ if ($m3g4w0rld_5t4tu5_d3l3t3 == "deleteusers"){
     $m3g4w0rld_5t5t3m3nt->fetchAll();
 }
 
+$sql_count = "SELECT count(*) FROM u553r5 WHERE u553r5_active = 0";
+$res_count = $xcon->prepare($sql_count);
+$res_count->execute();
+$num_approv = $res_count->fetchColumn();
 ?>
