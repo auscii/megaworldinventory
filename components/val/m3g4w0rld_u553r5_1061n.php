@@ -3,6 +3,12 @@ session_start();
 
 $m3g4w0rld_4ct1v3 = 1;
 
+if (!empty($_SESSION['m364_fname'])) {
+    $m364_fname = $_SESSION['m364_fname'];
+} else {
+    $m364_fname = "";
+}
+
 if (!empty($_POST['m3g4w0rld_u553r5_u53r'])) {
 	  $m3g4w0rld_u553r5_u53r = $_POST['m3g4w0rld_u553r5_u53r'];
 } else {
@@ -66,6 +72,7 @@ if (!empty($_POST['reg_u553r5_conf_pass'])) {
 	   $reg_u553r5_conf_pass = "";
 }
 
+$u553r5_position = "r36u14ru53r";
 
 
 if (isset($_POST['m3g4w0rld_u553r5_r3615t3r_6utt0n'])) {
@@ -80,7 +87,8 @@ if (isset($_POST['m3g4w0rld_u553r5_r3615t3r_6utt0n'])) {
 																								u553r5_email,
 																								u553r5_contact,
 																								u553r5_uname,
-																								u553r5_upass
+																								u553r5_upass,
+																								u553r5_position
 																								)
 																								VALUES (
 																								:u553r5_fname,
@@ -89,7 +97,8 @@ if (isset($_POST['m3g4w0rld_u553r5_r3615t3r_6utt0n'])) {
 																								:u553r5_email,
 																								:u553r5_contact,
 																								:u553r5_uname,
-																								:u553r5_upass
+																								:u553r5_upass,
+																								:u553r5_position
 																								)");
 						$m3g4w0rld_5t5t3m3nt->execute(
 								array(
@@ -99,7 +108,8 @@ if (isset($_POST['m3g4w0rld_u553r5_r3615t3r_6utt0n'])) {
 										'u553r5_email'       			 => $reg_u553r5_email,
 										'u553r5_contact'      		 => $reg_u553r5_contact,
 										'u553r5_uname'      		 	 => $reg_u553r5_uname,
-										'u553r5_upass'      		   => $reg_u553r5_pass
+										'u553r5_upass'      		   => $reg_u553r5_pass,
+										'u553r5_position'					 => $u553r5_position
 								)
 						);
 						$m3g4w0rld_5t5t3m3nt->fetchAll();
@@ -107,6 +117,7 @@ if (isset($_POST['m3g4w0rld_u553r5_r3615t3r_6utt0n'])) {
 }
 
 if (isset($_POST['m3g4w0rld_u553r5_1061n_6utt0n'])) {
+
 		$xcon->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		$m364 = $xcon->prepare("SELECT * FROM u553r5 WHERE
 														u553r5_uname = :m3g4w0rld_u553r5_u53r AND
@@ -121,6 +132,26 @@ if (isset($_POST['m3g4w0rld_u553r5_1061n_6utt0n'])) {
         )
     );
 		$row = $m364->fetch(PDO::FETCH_ASSOC);
+
+		$u53r_action = "Logged in";
+
+		$m3g4w0rld_5t5t3m3nt_4ct1vity = $xcon->prepare("INSERT INTO u53r_1065 (
+																				u53r_user,
+																				u53r_action
+																				)
+																				VALUES (
+																				:u53r_user,
+																				:u53r_action
+																				)");
+		$m3g4w0rld_5t5t3m3nt_4ct1vity->execute(
+				array(
+						'u53r_user'                => $m3g4w0rld_u553r5_u53r,
+						'u53r_action'						   => $u53r_action
+				)
+		);
+		// $m3g4w0rld_5t5t3m3nt_4ct1vity->fetchAll();
+
+
 		if ($row) {
         $_SESSION['welcome'] = 1;
         $_SESSION['m364_uname']=$row['u553r5_uname'] ;

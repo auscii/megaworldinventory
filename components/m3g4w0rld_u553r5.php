@@ -91,31 +91,31 @@ include("val/m3g4w0rld_u553r5_v4l.php");
 				    <a href="#" class="dropdown-toggle">
 				      <i class="menu-icon fa fa-file-o"></i>
 				      <span class="menu-text">
-				        Other Pages
-				        <span class="badge badge-primary">2</span>
+				        Audit Trail
 				      </span>
 				      <b class="arrow fa fa-angle-down"></b>
 				    </a>
 
 				    <b class="arrow"></b>
 
-				    <ul class="submenu">
+						<ul class="submenu">
 				      <li class="">
-				        <a href="#">
+				        <a href="m3g4w0rld_u553r5_1065.php">
 				          <i class="menu-icon fa fa-caret-right"></i>
-				          FAQ
+				          User Logs
 				        </a>
 				        <b class="arrow"></b>
 				      </li>
 
 				      <li class="">
-				        <a href="#">
+				        <a href="m3g4w0rld_4ct1v1ty_1065.php">
 				          <i class="menu-icon fa fa-caret-right"></i>
-				          Error 404
+				          Activity Logs
 				        </a>
 				        <b class="arrow"></b>
 				      </li>
 				    </ul>
+
 				  </li>
 				</ul><!-- /.nav-list -->
 
@@ -182,6 +182,8 @@ include("val/m3g4w0rld_u553r5_v4l.php");
 											               $m3g4w0rld_u553r5_contact = $row['u553r5_contact'];
 											               $m3g4w0rld_u553r5_active = $row['u553r5_active'];
 											               $m3g4w0rld_u553r5_date = $row['u553r5_date'];
+
+																		 $u553r5_fullName = $m3g4w0rld_u553r5_fname . " " . $m3g4w0rld_u553r5_mname . " " . $m3g4w0rld_u553r5_lname;
 											    ?>
 													<tr>
 														<td class="center"><label class="pos-rel"><?php echo $m3g4w0rld_u553r5_c0unt; ?></label></td>
@@ -215,7 +217,7 @@ include("val/m3g4w0rld_u553r5_v4l.php");
 																</a>
 																<a class="red" title="Delete"
 																	 href="#deleteModal" role="button" data-toggle="modal"
-															   	 onclick="deleteUsers('<?php echo $row['u553r5_id'] ?>');"
+															   	 onclick="deleteUsers('<?php echo $row['u553r5_id'] ?>','<?php echo $u553r5_fullName; ?>');"
 																	 >
 																	<i class="ace-icon fa fa-trash-o bigger-130"></i>
 																</a>
@@ -386,13 +388,14 @@ include("val/m3g4w0rld_u553r5_v4l.php");
 				<div class="modal-content">
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-						<h3 class="smaller lighter blue no-margin" id="m3g4w0rld_u553r5_m0d4l_label"></h3>
+						<h3 class="smaller lighter blue no-margin" id="deleteModallabel"></h3>
 					</div>
 
 					<form method="POST">
 
 						<input type="hidden" name="m3g4w0rld_5t4tu5_d3l3t3" id="m3g4w0rld_5t4tu5_d3l3t3" />
 						<input type="hidden" name="u553r5_key_d3l3t3" id="u553r5_key_d3l3t3" />
+						<input type="hidden" name="u553r5_fullname_d3l3t3" id="u553r5_fullname_d3l3t3" />
 
 							<div class="modal-body" style="margin: auto; text-align: center;">
 									<h1 class="form-label"><i class="fa fa-exclamation-circle red"></i> Are you sure you want to delete?</h1> <br />
@@ -452,11 +455,12 @@ include("val/m3g4w0rld_u553r5_v4l.php");
 					$('#u553r5_conf_upass').prop('required',false);
     }
 
-    function deleteUsers(key)
+    function deleteUsers(key,fullname)
     {
-          $("#productsModalLabel").html("Delete Products") ;
+          $("#deleteModallabel").html("Delete Users") ;
           $("#m3g4w0rld_5t4tu5_d3l3t3").val("deleteusers") ;
           $("#u553r5_key_d3l3t3").val(key) ;
+          $("#u553r5_fullname_d3l3t3").val(fullname) ;
     }
 		</script>
 

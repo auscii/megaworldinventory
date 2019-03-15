@@ -88,8 +88,7 @@ include("val/m3g4w0rld_m41n_v4l.php");
 				    <a href="#" class="dropdown-toggle">
 				      <i class="menu-icon fa fa-file-o"></i>
 				      <span class="menu-text">
-				        Other Pages
-				        <span class="badge badge-primary">2</span>
+				        Audit Trail
 				      </span>
 				      <b class="arrow fa fa-angle-down"></b>
 				    </a>
@@ -98,21 +97,22 @@ include("val/m3g4w0rld_m41n_v4l.php");
 
 				    <ul class="submenu">
 				      <li class="">
-				        <a href="#">
+				        <a href="m3g4w0rld_u553r5_1065.php">
 				          <i class="menu-icon fa fa-caret-right"></i>
-				          FAQ
+				          User Logs
 				        </a>
 				        <b class="arrow"></b>
 				      </li>
 
 				      <li class="">
-				        <a href="#">
+				        <a href="m3g4w0rld_4ct1v1ty_1065.php">
 				          <i class="menu-icon fa fa-caret-right"></i>
-				          Error 404
+				          Activity Logs
 				        </a>
 				        <b class="arrow"></b>
 				      </li>
 				    </ul>
+
 				  </li>
 				</ul><!-- /.nav-list -->
 

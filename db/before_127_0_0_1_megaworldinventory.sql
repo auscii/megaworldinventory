@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 15, 2019 at 09:51 AM
+-- Generation Time: Mar 14, 2019 at 10:57 AM
 -- Server version: 10.1.29-MariaDB
 -- PHP Version: 7.1.12
 
@@ -55,60 +55,7 @@ INSERT INTO `3mpl0y335` (`empl0y335_id`, `empl0y335_creator_no`, `empl0y335_fnam
 (2, 3, 'Gena', 'T', 'Tusi', 29, '2025-04-05', 'gtusi@megaworld.com', 2147483647, 'Makati City', 'Philippines', NULL, '2019-03-14 14:04:03'),
 (3, 6, 'Kaye', 'Nacario', 'Palileo', 25, '2022-05-25', 'knacario@gmail.com', 1923123912, 'Makati City', 'Philippines', NULL, '2019-03-13 12:21:28'),
 (4, 1, 'Hannah', 'Mallapre', 'Costas', 22, '1996-01-11', 'hcostas@gmail.com', 2147483647, 'West Rembo Zero Block Makati City', 'Philippines', NULL, '2019-03-13 12:26:05'),
-(5, 1, 'Kevs', 'Flor', 'Ayag', 22, '1992-04-02', 'kayag.global@megaworldcorp.com', 192312312, 'wqeqwe', 'eqweqweqw', NULL, '2019-03-13 12:44:46'),
-(7, 1, 'Peter', 'Spidey', 'Parker', 32, '2015-04-01', 'petr@gmail.com', 2147483647, 'qweqweqwe', 'USA', NULL, '2019-03-15 08:34:48');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `4ct1v1ty_1065`
---
-
-CREATE TABLE `4ct1v1ty_1065` (
-  `4ct1v1ty_id` int(11) NOT NULL,
-  `4ct1v1ty_user` text NOT NULL,
-  `4ct1v1ty_action` text NOT NULL,
-  `4ct1v1ty_action_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `4ct1v1ty_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `4ct1v1ty_1065`
---
-
-INSERT INTO `4ct1v1ty_1065` (`4ct1v1ty_id`, `4ct1v1ty_user`, `4ct1v1ty_action`, `4ct1v1ty_action_date`, `4ct1v1ty_date`) VALUES
-(1, 'Peter Spidey Parker', 'Added Employee(s) - Peter Parker', '2019-03-15 08:34:48', '2019-03-15 08:34:48'),
-(2, 'Mary Jane Parker Watsons', 'Editted Employee - Mary Jane Watsons', '2019-03-15 08:44:21', '2019-03-15 08:44:21'),
-(3, 'Sean D Narvasa', 'Deleted Employee - 6', '2019-03-15 08:45:26', '2019-03-15 08:45:26'),
-(4, 'ggwp ggwp ggwp', 'Added Employee - ggwp ggwp', '2019-03-15 08:46:14', '2019-03-15 08:46:14'),
-(5, 'Sean D Narvasa', 'Deleted Employee - ggwp ggwp ggwp', '2019-03-15 08:46:24', '2019-03-15 08:46:24'),
-(6, 'Dorian EXD Grey', 'Added New User - Dorian EXD Grey', '2019-03-15 08:58:20', '2019-03-15 08:58:20');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `u53r_1065`
---
-
-CREATE TABLE `u53r_1065` (
-  `u53r_id` int(11) NOT NULL,
-  `u53r_user` text NOT NULL,
-  `u53r_action` text NOT NULL,
-  `u53r_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `u53r_1065`
---
-
-INSERT INTO `u53r_1065` (`u53r_id`, `u53r_user`, `u53r_action`, `u53r_date`) VALUES
-(1, 'seann', 'Logged out', '2019-03-15 14:20:07'),
-(2, 'seann', 'Logged in', '2019-03-15 14:20:10'),
-(3, 'seann', 'Logged out', '2019-03-15 14:21:29'),
-(4, 'seann', 'Logged in', '2019-03-15 14:21:31'),
-(5, 'seann', 'Logged in', '2019-03-15 14:40:26'),
-(6, 'seann', 'Logged out', '2019-03-15 15:46:13'),
-(7, 'seann', 'Logged in', '2019-03-15 15:46:48');
+(5, 1, 'Kevs', 'Flor', 'Ayag', 22, '1992-04-02', 'kayag.global@megaworldcorp.com', 192312312, 'wqeqwe', 'eqweqweqw', NULL, '2019-03-13 12:44:46');
 
 -- --------------------------------------------------------
 
@@ -144,9 +91,7 @@ INSERT INTO `u553r5` (`u553r5_id`, `u553r5_fname`, `u553r5_uname`, `u553r5_upass
 (9, 'Roniel', 'roniel', 'a8c0808d025da1aff2a2ffdc70d4f5159df705d95b5e9a299628cc1a299e283f', 'Canto', 'r', 's@s', '12312312', '', 1, '2019-03-13 12:43:46'),
 (10, 'Jonah', 'x', '2d711642b726b04401627ca9fbac32f5c8530fb1903cc4db02258717921a4881', 'Pardo', 'P.', 'x@x', '10101', '', 1, '2019-03-14 09:14:37'),
 (11, 'Jin', 'jin', '4e766f099e980c1ed89164271b470d32d330563ac6f866f3a46146bb429bb71f', 'Kazama', 'T.', 'jinkazza@tekken.com', '011191923', '', 0, '2019-03-14 09:12:19'),
-(12, 'kjkaskldaj', 'gg', 'cbd3cfb9b9f51bbbfbf08759e243f5b3519cbf6ecc219ee95fe7c667e32c0a8d', 'jkljaslkdjals', 'klasjdlkajsd', 'aklsjdl@aklsjdklajsd', '1230192312', 'r36u14ru53r', 0, '2019-03-14 09:14:20'),
-(13, 'Dorian', 'dorian', '6e4ae039e66d2b374311fbaf24a47cb50ff1439764a4a4df33967481e28b2c25', 'Grey', 'EXD', 'dorian.grey@protonmail.com', '192312312312', 'r36u14ru53r', 0, '2019-03-15 08:58:20'),
-(14, 'Jose', 'jose', '1ec4ed037766aa181d8840ad04b9fc6e195fd37dedc04c98a5767a67d3758ece', 'Rizal', 'Abra', 'jose@gmail.com', '213121312', 'r36u14ru53r', 0, '2019-03-15 15:46:37');
+(12, 'kjkaskldaj', 'gg', 'cbd3cfb9b9f51bbbfbf08759e243f5b3519cbf6ecc219ee95fe7c667e32c0a8d', 'jkljaslkdjals', 'klasjdlkajsd', 'aklsjdl@aklsjdklajsd', '1230192312', 'r36u14ru53r', 0, '2019-03-14 09:14:20');
 
 --
 -- Indexes for dumped tables
@@ -157,18 +102,6 @@ INSERT INTO `u553r5` (`u553r5_id`, `u553r5_fname`, `u553r5_uname`, `u553r5_upass
 --
 ALTER TABLE `3mpl0y335`
   ADD PRIMARY KEY (`empl0y335_id`);
-
---
--- Indexes for table `4ct1v1ty_1065`
---
-ALTER TABLE `4ct1v1ty_1065`
-  ADD PRIMARY KEY (`4ct1v1ty_id`);
-
---
--- Indexes for table `u53r_1065`
---
-ALTER TABLE `u53r_1065`
-  ADD PRIMARY KEY (`u53r_id`);
 
 --
 -- Indexes for table `u553r5`
@@ -184,25 +117,13 @@ ALTER TABLE `u553r5`
 -- AUTO_INCREMENT for table `3mpl0y335`
 --
 ALTER TABLE `3mpl0y335`
-  MODIFY `empl0y335_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-
---
--- AUTO_INCREMENT for table `4ct1v1ty_1065`
---
-ALTER TABLE `4ct1v1ty_1065`
-  MODIFY `4ct1v1ty_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
---
--- AUTO_INCREMENT for table `u53r_1065`
---
-ALTER TABLE `u53r_1065`
-  MODIFY `u53r_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `empl0y335_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `u553r5`
 --
 ALTER TABLE `u553r5`
-  MODIFY `u553r5_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `u553r5_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

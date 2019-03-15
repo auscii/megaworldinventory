@@ -55,6 +55,8 @@ if (!empty($_SESSION['m364_mname'])) {
     $m364_mname = "";
 }
 
+$m364_user_logged = $m364_fname . " " . $m364_mname . " " . $m364_lname;
+
 if (!empty($_SESSION['m364_3m41l'])) {
     $m364_3m41l = $_SESSION['m364_3m41l'];
 } else {
@@ -163,6 +165,11 @@ if (!empty($_POST['empl0y335_key_d3l3t3'])) {
      $empl0y335_key_d3l3t3 = "";
 }
 
+if (!empty($_POST['empl0y335_d3l3t3_fname'])) {
+    $empl0y335_d3l3t3_fname = $_POST['empl0y335_d3l3t3_fname'];
+} else {
+    $empl0y335_d3l3t3_fname = "";
+}
 
 
 
@@ -219,6 +226,26 @@ if (isset($_POST['invensubm1t_01010101'])) {
             )
         );
         $m3g4w0rld_5t5t3m3nt->fetchAll();
+
+        $Act1v1ty_user = $empl0y335_fname . " " . $empl0y335_mname . " " . $empl0y335_lname;
+        $Act1v1ty_action = "Added New Employee - " . $empl0y335_fname . " " . $empl0y335_lname;
+
+        $m3g4w0rld_5t5t3m3nt_4ct1vity = $xcon->prepare("INSERT INTO 4ct1v1ty_1065 (
+                                            4ct1v1ty_user,
+                                            4ct1v1ty_action
+                                            )
+                                            VALUES (
+                                            :4ct1v1ty_user,
+                                            :4ct1v1ty_action
+                                            )");
+        $m3g4w0rld_5t5t3m3nt_4ct1vity->execute(
+            array(
+                '4ct1v1ty_user'                => $Act1v1ty_user,
+                '4ct1v1ty_action'   					 => $Act1v1ty_action
+
+            )
+        );
+        $m3g4w0rld_5t5t3m3nt_4ct1vity->fetchAll();
     }
 }
 
@@ -249,6 +276,27 @@ if ($m3g4w0rld_5t4tu5 == "editemployee"){
         )
     );
     $m3g4w0rld_5t5t3m3nt->fetchAll();
+
+
+    $Act1v1ty_user = $empl0y335_fname . " " . $empl0y335_mname . " " . $empl0y335_lname;
+    $Act1v1ty_action = "Editted Employee - " . $empl0y335_fname . " " . $empl0y335_lname;
+
+    $m3g4w0rld_5t5t3m3nt_4ct1vity = $xcon->prepare("INSERT INTO 4ct1v1ty_1065 (
+                                        4ct1v1ty_user,
+                                        4ct1v1ty_action
+                                        )
+                                        VALUES (
+                                        :4ct1v1ty_user,
+                                        :4ct1v1ty_action
+                                        )");
+    $m3g4w0rld_5t5t3m3nt_4ct1vity->execute(
+        array(
+            '4ct1v1ty_user'                => $Act1v1ty_user,
+            '4ct1v1ty_action'   					 => $Act1v1ty_action
+
+        )
+    );
+    $m3g4w0rld_5t5t3m3nt_4ct1vity->fetchAll();
 }
 
 if ($m3g4w0rld_5t4tu5_d3l3t3 == "deletemployee"){
@@ -259,6 +307,26 @@ if ($m3g4w0rld_5t4tu5_d3l3t3 == "deletemployee"){
         )
     );
     $m3g4w0rld_5t5t3m3nt->fetchAll();
+
+    $Act1v1ty_user = $m364_user_logged;
+    $Act1v1ty_action = "Deleted Employee - " . $empl0y335_d3l3t3_fname;
+
+    $m3g4w0rld_5t5t3m3nt_4ct1vity = $xcon->prepare("INSERT INTO 4ct1v1ty_1065 (
+                                        4ct1v1ty_user,
+                                        4ct1v1ty_action
+                                        )
+                                        VALUES (
+                                        :4ct1v1ty_user,
+                                        :4ct1v1ty_action
+                                        )");
+    $m3g4w0rld_5t5t3m3nt_4ct1vity->execute(
+        array(
+            '4ct1v1ty_user'                => $Act1v1ty_user,
+            '4ct1v1ty_action'   					 => $Act1v1ty_action
+
+        )
+    );
+    $m3g4w0rld_5t5t3m3nt_4ct1vity->fetchAll();
 }
 
 $sql_count = "SELECT count(*) FROM u553r5 WHERE u553r5_active = 0";
