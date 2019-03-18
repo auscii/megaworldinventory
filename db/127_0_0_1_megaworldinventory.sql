@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 15, 2019 at 09:51 AM
+-- Generation Time: Mar 18, 2019 at 02:01 AM
 -- Server version: 10.1.29-MariaDB
 -- PHP Version: 7.1.12
 
@@ -108,7 +108,9 @@ INSERT INTO `u53r_1065` (`u53r_id`, `u53r_user`, `u53r_action`, `u53r_date`) VAL
 (4, 'seann', 'Logged in', '2019-03-15 14:21:31'),
 (5, 'seann', 'Logged in', '2019-03-15 14:40:26'),
 (6, 'seann', 'Logged out', '2019-03-15 15:46:13'),
-(7, 'seann', 'Logged in', '2019-03-15 15:46:48');
+(7, 'seann', 'Logged in', '2019-03-15 15:46:48'),
+(8, 'seann', 'Logged out', '2019-03-15 17:01:35'),
+(9, 'seann', 'Logged in', '2019-03-18 08:30:23');
 
 -- --------------------------------------------------------
 
@@ -184,7 +186,7 @@ ALTER TABLE `u553r5`
 -- AUTO_INCREMENT for table `3mpl0y335`
 --
 ALTER TABLE `3mpl0y335`
-  MODIFY `empl0y335_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `empl0y335_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `4ct1v1ty_1065`
@@ -196,7 +198,7 @@ ALTER TABLE `4ct1v1ty_1065`
 -- AUTO_INCREMENT for table `u53r_1065`
 --
 ALTER TABLE `u53r_1065`
-  MODIFY `u53r_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `u53r_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `u553r5`

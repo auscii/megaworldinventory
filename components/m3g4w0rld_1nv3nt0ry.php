@@ -163,7 +163,7 @@ include("val/m3g4w0rld_1nv3nt0ry_v4l.php");
 								<div class="col-xs-4 pull-right">
 									<form method="POST">
 											<div class="input-group">
-												<input type="text" class="form-control" name="emp_search" id="emp_search" placeholder="Search">
+												<input type="text" class="form-control" name="emp_search" id="emp_search" placeholder="Search" required>
 														<div class="input-group-btn">
 																	<button type="submit" name="emp_key_btn_search" id="emp_key_btn_search" class="btn btn-primary no-border btn-sm">
 																		<i class="ace-icon fa fa-search icon-on-right bigger-20"></i>
@@ -194,7 +194,7 @@ include("val/m3g4w0rld_1nv3nt0ry_v4l.php");
 															 																					   empl0y335_age, empl0y335_bdate, empl0y335_email, empl0y335_contact,
 																																					 empl0y335_address, empl0y335_country, empl0y335_status, empl0y335_date, empl0y335_creator_no,
 																																					 CONCAT(LEFT (empl0y335_fname, 3), '', RIGHT (empl0y335_lname, 3)) AS empl0y335_search_name
-																																	  FROM 3mpl0y335 WHERE empl0y335_creator_no = 1 AND
+																																	  FROM 3mpl0y335 WHERE empl0y335_creator_no = $m364_1d AND
 																																		empl0y335_fname LIKE ?
 																																		OR empl0y335_lname LIKE ?
 																																		OR CONCAT(LEFT (empl0y335_fname, 3), '', RIGHT (empl0y335_lname, 3)) LIKE ?");
