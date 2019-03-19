@@ -18,7 +18,7 @@
 
     <div class="navbar-buttons navbar-header pull-right" role="navigation">
       <ul class="nav ace-nav">
-
+      <?php if ($m364_p051t10n === "4dm1n15tr4t0r") { ?>
         <li class="green dropdown-modal">
           <a data-toggle="dropdown" class="dropdown-toggle" href="#">
             <i class="fa fa-bell fa-2x icon-animated-bell"></i>
@@ -79,6 +79,8 @@
 							</ul>
         </li>
 
+        <?php } ?>
+
         <li class="light-blue dropdown-modal right-side">
           <a data-toggle="dropdown" href="#" class="dropdown-toggle">
             <i class="fa fa-user fa-2x"></i>&nbsp;
@@ -108,6 +110,9 @@
         </li>
       </ul>
     </div>
+
+
+
   </div>
   <!-- /.navbar-container -->
 </div>

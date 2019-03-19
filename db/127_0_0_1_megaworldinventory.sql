@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 4.8.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 18, 2019 at 02:01 AM
--- Server version: 10.1.29-MariaDB
--- PHP Version: 7.1.12
+-- Generation Time: Mar 19, 2019 at 04:05 PM
+-- Server version: 10.1.37-MariaDB
+-- PHP Version: 7.3.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -110,7 +110,34 @@ INSERT INTO `u53r_1065` (`u53r_id`, `u53r_user`, `u53r_action`, `u53r_date`) VAL
 (6, 'seann', 'Logged out', '2019-03-15 15:46:13'),
 (7, 'seann', 'Logged in', '2019-03-15 15:46:48'),
 (8, 'seann', 'Logged out', '2019-03-15 17:01:35'),
-(9, 'seann', 'Logged in', '2019-03-18 08:30:23');
+(9, 'seann', 'Logged in', '2019-03-18 08:30:23'),
+(10, 'seann', 'Logged in', '2019-03-19 21:01:31'),
+(11, 'seann', 'Logged out', '2019-03-19 21:42:28'),
+(12, 'shart', 'Logged in', '2019-03-19 21:42:34'),
+(13, 'shart', 'Logged out', '2019-03-19 21:50:25'),
+(14, 'nell', 'Logged in', '2019-03-19 21:50:31'),
+(15, 'nell', 'Logged out', '2019-03-19 21:53:57'),
+(16, 'seann', 'Logged in', '2019-03-19 21:54:02'),
+(17, 'seann', 'Logged out', '2019-03-19 22:36:55'),
+(18, 'seann', 'Logged in', '2019-03-19 22:36:56'),
+(19, 'seann', 'Logged out', '2019-03-19 22:37:08'),
+(20, 'shart', 'Logged in', '2019-03-19 22:38:37'),
+(21, 'shart', 'Logged out', '2019-03-19 22:38:54'),
+(22, 'seann', 'Logged in', '2019-03-19 22:39:00'),
+(23, 'seann', 'Logged out', '2019-03-19 22:48:32'),
+(24, 'dorian', 'Logged in', '2019-03-19 22:48:37'),
+(25, 'seann', 'Logged in', '2019-03-19 22:48:44'),
+(26, 'seann', 'Logged out', '2019-03-19 22:48:54'),
+(27, 'dorian', 'Logged in', '2019-03-19 22:48:58'),
+(28, 'dorian', 'Logged out', '2019-03-19 22:52:15'),
+(29, 'dorian', 'Logged in', '2019-03-19 22:52:17'),
+(30, 'dorian', 'Logged in', '2019-03-19 22:52:26'),
+(31, 'dorian', 'Logged out', '2019-03-19 22:55:31'),
+(32, 'seann', 'Logged in', '2019-03-19 22:55:35'),
+(33, 'seann', 'Logged out', '2019-03-19 22:55:39'),
+(34, 'dorian', 'Logged in', '2019-03-19 22:55:45'),
+(35, 'dorian', 'Logged out', '2019-03-19 22:56:01'),
+(36, 'seann', 'Logged in', '2019-03-19 22:56:06');
 
 -- --------------------------------------------------------
 
@@ -140,15 +167,15 @@ INSERT INTO `u553r5` (`u553r5_id`, `u553r5_fname`, `u553r5_uname`, `u553r5_upass
 (1, 'Sean', 'seann', '0b1f54a61fa4b42f021b4703a8c8a7842a8323f9d966bf4d9e9a6cdb34432e26', 'Narvasa', 'D', 'sa.narvasa@gmail.com', '09166860971', '4dm1n15tr4t0r', 1, '2019-03-12 17:50:05'),
 (2, 'Gena', 's', '043a718774c572bd8a25adbeb1bfcd5c0256ae11cecf9f9c3f925d0e52beaf89', 'Tusi', 'L', 's@s', '2', 'r36u14ru53r', 1, '2019-03-14 13:08:05'),
 (3, 'Spencer', 'shart', '01206183ad65e887bf6fa0c070bc0ccab9532feff45c9c658a0f879bcd7f5eb0', 'Hart', 'Madriaga', 'shart.global@megaworldcorp.com', '091239812312', '4dm1n15tr4t0r', 1, '2019-03-12 17:16:29'),
-(5, 'Anne', 'anne', '90b8de4051f02b7a29484341f3a903e1b2c6a233f5465e19c634535c7b315e6f', 'Marisse', 'S', 'amarisse.global@megaworldcorp.com', '091231231924', 'r36u14ru53r', 1, '2019-03-12 17:31:06'),
+(5, 'Anne', 'anne', '90b8de4051f02b7a29484341f3a903e1b2c6a233f5465e19c634535c7b315e6f', 'Marisse', 'S', 'amarisse.global@megaworldcorp.com', '091231231924', 'r36u14ru53r', 0, '2019-03-19 23:02:35'),
 (6, 'Darnell', 'nell', '604de9dbdb1909b6ad941a1a52b06e83c09750c0afb18726eca4cb943b9b91e2', 'Nacario', 'Corpuz', 'dnacario.k1194123@umak.edu.ph', '091239123912', 'r36u14ru53r', 1, '2019-03-12 17:33:33'),
-(8, 'Ivan', 'ivan', 'cd0b9452fc376fc4c35a60087b366f70d883fc901524daf1f122fbd319384f6a', 'Correa', 'X', 'ivan@ue.com', '091283182312', 'r36u14ru53r', 1, '2019-03-13 12:43:45'),
-(9, 'Roniel', 'roniel', 'a8c0808d025da1aff2a2ffdc70d4f5159df705d95b5e9a299628cc1a299e283f', 'Canto', 'r', 's@s', '12312312', '', 1, '2019-03-13 12:43:46'),
-(10, 'Jonah', 'x', '2d711642b726b04401627ca9fbac32f5c8530fb1903cc4db02258717921a4881', 'Pardo', 'P.', 'x@x', '10101', '', 1, '2019-03-14 09:14:37'),
-(11, 'Jin', 'jin', '4e766f099e980c1ed89164271b470d32d330563ac6f866f3a46146bb429bb71f', 'Kazama', 'T.', 'jinkazza@tekken.com', '011191923', '', 0, '2019-03-14 09:12:19'),
-(12, 'kjkaskldaj', 'gg', 'cbd3cfb9b9f51bbbfbf08759e243f5b3519cbf6ecc219ee95fe7c667e32c0a8d', 'jkljaslkdjals', 'klasjdlkajsd', 'aklsjdl@aklsjdklajsd', '1230192312', 'r36u14ru53r', 0, '2019-03-14 09:14:20'),
-(13, 'Dorian', 'dorian', '6e4ae039e66d2b374311fbaf24a47cb50ff1439764a4a4df33967481e28b2c25', 'Grey', 'EXD', 'dorian.grey@protonmail.com', '192312312312', 'r36u14ru53r', 0, '2019-03-15 08:58:20'),
-(14, 'Jose', 'jose', '1ec4ed037766aa181d8840ad04b9fc6e195fd37dedc04c98a5767a67d3758ece', 'Rizal', 'Abra', 'jose@gmail.com', '213121312', 'r36u14ru53r', 0, '2019-03-15 15:46:37');
+(8, 'Ivan', 'ivan', 'cd0b9452fc376fc4c35a60087b366f70d883fc901524daf1f122fbd319384f6a', 'Correa', 'X', 'ivan@ue.com', '091283182312', 'r36u14ru53r', 0, '2019-03-19 22:47:37'),
+(9, 'Roniel', 'roniel', 'a8c0808d025da1aff2a2ffdc70d4f5159df705d95b5e9a299628cc1a299e283f', 'Canto', 'r', 's@s', '12312312', '', 1, '2019-03-19 22:48:13'),
+(10, 'Jonah', 'x', '2d711642b726b04401627ca9fbac32f5c8530fb1903cc4db02258717921a4881', 'Pardo', 'P.', 'x@x', '10101', '', 1, '2019-03-19 23:03:02'),
+(11, 'Jin', 'jin', '4e766f099e980c1ed89164271b470d32d330563ac6f866f3a46146bb429bb71f', 'Kazama', 'T.', 'jinkazza@tekken.com', '011191923', '', 0, '2019-03-19 23:02:43'),
+(12, 'kjkaskldaj', 'gg', 'cbd3cfb9b9f51bbbfbf08759e243f5b3519cbf6ecc219ee95fe7c667e32c0a8d', 'jkljaslkdjals', 'klasjdlkajsd', 'aklsjdl@aklsjdklajsd', '1230192312', 'r36u14ru53r', 1, '2019-03-19 22:46:59'),
+(13, 'Dorian', 'dorian', '6e4ae039e66d2b374311fbaf24a47cb50ff1439764a4a4df33967481e28b2c25', 'Grey', 'EXD', 'dorian.grey@protonmail.com', '192312312312', 'r36u14ru53r', 0, '2019-03-19 23:02:46'),
+(14, 'Jose', 'jose', '1ec4ed037766aa181d8840ad04b9fc6e195fd37dedc04c98a5767a67d3758ece', 'Rizal', 'Abra', 'jose@gmail.com', '213121312', 'r36u14ru53r', 0, '2019-03-19 23:02:48');
 
 --
 -- Indexes for dumped tables
@@ -198,7 +225,7 @@ ALTER TABLE `4ct1v1ty_1065`
 -- AUTO_INCREMENT for table `u53r_1065`
 --
 ALTER TABLE `u53r_1065`
-  MODIFY `u53r_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `u53r_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT for table `u553r5`

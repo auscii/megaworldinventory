@@ -175,9 +175,15 @@ include("val/m3g4w0rld_m41n_v4l.php");
     											<div class="infobox-icon">
     												<i class="ace-icon fa fa-users"></i>
     											</div>
+													<?php
+													$sql = "SELECT count(*) FROM u553r5";
+													$result = $xcon->prepare($sql);
+													$result->execute();
+													$total_number_user = $result->fetchColumn();
+													?>
     											<div class="infobox-data">
-    												<span class="infobox-data-number">32</span>
-    												<div class="infobox-content"> New Users</div>
+    												<span class="infobox-data-number"><?php echo $total_number_user; ?></span>
+    												<div class="infobox-content"> Total Users</div>
     											</div>
   										 </div>
                      </a>
@@ -187,10 +193,15 @@ include("val/m3g4w0rld_m41n_v4l.php");
   											<div class="infobox-icon">
   												<i class="ace-icon fa fa-users"></i>
   											</div>
-
+												<?php
+												$sql = "SELECT count(*) FROM 3mpl0y335";
+												$result = $xcon->prepare($sql);
+												$result->execute();
+												$total_number_emp = $result->fetchColumn();
+												?>
                         <div class="infobox-data">
-  												<span class="infobox-data-number">11</span>
-  												<div class="infobox-content"> New Employees</div>
+  												<span class="infobox-data-number"><?php echo $total_number_emp; ?></span>
+  												<div class="infobox-content"> Total Employees</div>
 											  </div>
 									    </div>
                     </a>
@@ -200,10 +211,15 @@ include("val/m3g4w0rld_m41n_v4l.php");
     											<div class="infobox-icon">
     												<i class="ace-icon fa fa-bell"></i>
     											</div>
-
+													<?php
+													$sql = "SELECT count(*) FROM u553r5 WHERE u553r5_active = 0";
+													$result = $xcon->prepare($sql);
+													$result->execute();
+													$total_number_pend_user = $result->fetchColumn();
+													?>
     											<div class="infobox-data">
-    												<span class="infobox-data-number">8</span>
-    												<div class="infobox-content"> New Approval</div>
+    												<span class="infobox-data-number"><?php echo $total_number_pend_user; ?></span>
+    												<div class="infobox-content"> Pending Users</div>
     											</div>
     										</div>
                      </a>

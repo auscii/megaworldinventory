@@ -155,7 +155,7 @@ include("val/m3g4w0rld_u553r5_v4l.php");
 											<table id="dynamic-table" class="table table-striped table-bordered table-hover text-top-1x">
 												<thead>
 													<tr>
-														<th class="text-center">#</th>
+														<th class="text-center">ID #</th>
 														<th class="text-center">Fullname</th>
 														<th class="text-center">Email Address</th>
 														<th class="text-center">Contact number</th>
@@ -180,9 +180,12 @@ include("val/m3g4w0rld_u553r5_v4l.php");
 											               $m3g4w0rld_u553r5_contact = $row['u553r5_contact'];
 											               $m3g4w0rld_u553r5_active = $row['u553r5_active'];
 											               $m3g4w0rld_u553r5_date = $row['u553r5_date'];
+																		 $m3g4w0rld_u553r5_full_name = $m3g4w0rld_u553r5_fname . " " .
+																		 															 $m3g4w0rld_u553r5_mname . " " .
+																																	 $m3g4w0rld_u553r5_lname;
 											    ?>
 													<tr>
-														<td class="center"><label class="pos-rel"><?php echo $m3g4w0rld_u553r5_c0unt; ?></label></td>
+														<td class="center"><label class="pos-rel"><?php echo $m3g4w0rld_u553r5_id; ?></label></td>
 														<td class="text-center"><?php echo $m3g4w0rld_u553r5_fname. " " . $m3g4w0rld_u553r5_mname . " " . $m3g4w0rld_u553r5_lname; ?></td>
 														<td class="text-center"><?php echo $m3g4w0rld_u553r5_email; ?></td>
 														<td class="text-center"><?php echo $m3g4w0rld_u553r5_contact; ?></td>
@@ -190,14 +193,18 @@ include("val/m3g4w0rld_u553r5_v4l.php");
 														<td class="text-center">
 																<?php
 																if ($m3g4w0rld_u553r5_active === "1") {
-																	  echo '<span class="label label-success"><i class="fa fa-check"></i> APPROVED</span>';
+																	  echo '<button type="button" class="btn btn-success" disabled><i class="fa fa-check"></i> APPROVED</button>';
 																}
 															  else if ($m3g4w0rld_u553r5_active === "0") {
-																		// echo '<span class="label label-danger"><i class="fa fa-exclamation-circle"></i> INACTIVE</span>';
 																?>
+																			    <button type="button" class="btn btn-danger"
+																			 						onclick="approveName('<?php echo $m3g4w0rld_u553r5_id; ?>',
+																																	     '<?php echo $m3g4w0rld_u553r5_full_name; ?>');"
+																									href="#approvalModal" role="button" data-toggle="modal">
+																				  <i class="fa fa-exclamation-circle"></i> INACTIVE
+																					</button>
+																<!--
 																<form method="POST">
-																			<!-- <input type="hidden" name="m364_4ppr0v4l_y3s" id="m364_4ppr0v4l_y3s" value="1" />
-																			<input type="hidden" name="m364_4ppr0v4l_n0" id="m364_4ppr0v4l_n0" value="0" /> -->
 																			<input type="hidden" name="m364_4ppr0v4l_st4tus" id="m364_4ppr0v4l_st4tus" />
 																			<input type="hidden" name="m364_4ppr0v4l_k3y" id="m364_4ppr0v4l_k3y" />
 																			<input type="hidden" name="m364_4ppr0v4l_4n5" id="m364_4ppr0v4l_4n5" />
@@ -213,6 +220,7 @@ include("val/m3g4w0rld_u553r5_v4l.php");
 																				No
 																			</button>
 																</form>
+															-->
 																<?php } ?>
 														</td>
 													</tr>
@@ -237,6 +245,59 @@ include("val/m3g4w0rld_u553r5_v4l.php");
 	</div>
 </div><!-- /.main-content -->
 
+<div id="approvalModal" class="modal fade" tabindex="-1">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h3 class="smaller lighter blue no-margin" id="#"></h3>
+			</div>
+
+			 <form method="POST">
+						<input type="hidden" name="m364_4ppr0v4l_st4tus" id="m364_4ppr0v4l_st4tus" />
+						<input type="hidden" name="m364_4ppr0v4l_k3y" id="m364_4ppr0v4l_k3y" />
+						<input type="hidden" name="m364_4ppr0v4l_4n5" id="m364_4ppr0v4l_4n5" />
+
+						 <div class="modal-body" style="margin: auto; text-align: center;">
+							 <h1 class="form-label"><i class="fa fa-exclamation-circle red"></i>
+								 Are you sure you want to Approve
+								 <!-- <span class="approvers_name"></span> -->
+							 </h1> <br />
+
+							 <button type="submit" class="btn btn-sm btn-danger"
+							   			 style="margin: auto; text-align: center;"
+											 onclick="userApproval(1);">
+											 <!-- onclick="userApproval('<?php //echo $m3g4w0rld_u553r5_id; ?>', 1);"> -->
+								 <i class="ace-icon fa fa-check"></i>
+								 Yes
+							 </button> &nbsp; &nbsp;
+							 <button class="btn btn-sm btn-primary" data-dismiss="modal"
+							 				 style="margin: auto; text-align: center;"
+			 								 onclick="userApproval(0);">
+			 								 <!-- onclick="userApproval('<?php //echo $m3g4w0rld_u553r5_id; ?>', 0);"> -->
+								 <i class="ace-icon fa fa-times"></i>
+								 No
+							 </button>
+					<!--
+								<button type="submit" class="label label-success label-white middle"
+									onclick="userApproval('<?php echo $m3g4w0rld_u553r5_id; ?>', 1);">
+									<i class="ace-icon fa fa-check-circle bigger-120"></i>
+									Yes
+								</button> &nbsp;
+								<button type="submit" class="label label-danger label-white middle"
+									onclick="userApproval('<?php echo $m3g4w0rld_u553r5_id; ?>', 0);">
+									<i class="ace-icon fa fa-times-circle bigger-120"></i>
+									No
+								</button>
+					 -->
+
+					   </div>
+			</form>
+
+			</div>
+		</div>
+	</div>
+
 			<div class="footer">
 				<div class="footer-inner">
 					<div class="footer-content">
@@ -254,9 +315,14 @@ include("val/m3g4w0rld_u553r5_v4l.php");
 		</div><!-- /.main-container -->
 
 		<script>
-			function userApproval(id,app) {
+			function approveName(megaid,meganame){
+			  // $(".approvers_name").val(meganame) ;
+				$("#m364_4ppr0v4l_k3y").val(megaid) ;
+			}
+
+			function userApproval(app) {
 				$("#m364_4ppr0v4l_st4tus").val("updateuserapproval") ;
-				$("#m364_4ppr0v4l_k3y").val(id) ;
+				// $("#m364_4ppr0v4l_k3y").val(id) ;
 				$("#m364_4ppr0v4l_4n5").val(app) ;
 			}
 		</script>

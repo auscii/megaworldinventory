@@ -220,6 +220,10 @@ include("val/m3g4w0rld_1nv3nt0ry_v4l.php");
 																					$m3g4w0rld_empl0y335_fullName = $m3g4w0rld_empl0y335_fname
 																					. " " . $m3g4w0rld_empl0y335_mname
 																					. " " . $m3g4w0rld_empl0y335_lname;
+																					$empl0y335_search_name = $row['empl0y335_search_name'];
+																					$empl0y335_creator_no = $row['empl0y335_creator_no'];
+
+													if ($empl0y335_creator_no === $m364_1d) {
 											    ?>
 													<tr>
 														<td class="text-center"><?php echo $m3g4w0rld_empl0y335_id; ?></td>
@@ -255,11 +259,7 @@ include("val/m3g4w0rld_1nv3nt0ry_v4l.php");
 														</td>
 													</tr>
 												</tbody>
-											<?php } }
-											//}
-										//}  ?>
-
-											<?php }
+											<?php } } } }
 											//else { ?>
 											</table>
 
