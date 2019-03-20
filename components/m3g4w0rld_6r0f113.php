@@ -37,7 +37,8 @@ include("val/m3g4w0rld_m41n_v4l.php");
 
 				<?php //include("../inc/m3g4w0rld_51d3b4r.php"); ?>
 				<ul class="nav nav-list">
-				  <li class="active">
+					<?php if ($adm1n === $m364_p051t10n) { ?>
+				  <li class="">
 				    <a href="m3g4w0rld_m41n.php">
 				      <i class="menu-icon fa fa-tachometer"></i>
 				      <span class="menu-text"> Home </span>
@@ -45,7 +46,7 @@ include("val/m3g4w0rld_m41n_v4l.php");
 				    <b class="arrow"></b>
 				  </li>
 
-					<?php if ($adm1n === $m364_p051t10n) { ?>
+
 
 				  <li class="">
 				    <a href="#" class="dropdown-toggle">
@@ -74,30 +75,18 @@ include("val/m3g4w0rld_m41n_v4l.php");
 				    </ul>
 				  </li>
 
-					<?php } ?>
-
-
-				  <li class="">
-				    <a href="m3g4w0rld_1nv3nt0ry.php">
-				      <i class="menu-icon fa fa-list"></i>
-				      <span class="menu-text"> Employees Inventory </span>
-				    </a>
-				    <b class="arrow"></b>
-				  </li>
-
-				  <li class="">
+					<li class="">
 				    <a href="#" class="dropdown-toggle">
 				      <i class="menu-icon fa fa-file-o"></i>
 				      <span class="menu-text">
 				        Audit Trail
-				        <span class="badge badge-primary">2</span>
 				      </span>
 				      <b class="arrow fa fa-angle-down"></b>
 				    </a>
 
 				    <b class="arrow"></b>
 
-						<ul class="submenu">
+				    <ul class="submenu">
 				      <li class="">
 				        <a href="m3g4w0rld_u553r5_1065.php">
 				          <i class="menu-icon fa fa-caret-right"></i>
@@ -114,8 +103,20 @@ include("val/m3g4w0rld_m41n_v4l.php");
 				        <b class="arrow"></b>
 				      </li>
 				    </ul>
-						
+
 				  </li>
+
+				 <?php } ?>
+
+				  <li class="active">
+				    <a href="m3g4w0rld_1nv3nt0ry.php">
+				      <i class="menu-icon fa fa-list"></i>
+				      <span class="menu-text"> Employees Inventory </span>
+				    </a>
+				    <b class="arrow"></b>
+				  </li>
+
+
 				</ul><!-- /.nav-list -->
 
 

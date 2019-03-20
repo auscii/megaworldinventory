@@ -1,0 +1,11 @@
+http://megainventory.elementfx.com/
+
+***x10 Hosting & Gmail Account***
+user: supmegainvent@gmail.com
+pass: supportmega201900111011
+
+
+***x10 MySQL Account***
+dbname: megainve_ntorydb
+user: megainve_r00t
+pass: r00t

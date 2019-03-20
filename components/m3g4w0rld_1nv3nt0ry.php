@@ -42,7 +42,7 @@ include("val/m3g4w0rld_1nv3nt0ry_v4l.php");
 				// $file_name = basename($_SERVER['REQUEST_URI'], '?' . $_SERVER['QUERY_STRING']);
 				?>
 				<ul class="nav nav-list">
-				  <?php //if($full_path === $current_path_index) { echo "active"; }?>
+					<?php if ($adm1n === $m364_p051t10n) { ?>
 				  <li class="">
 				    <a href="m3g4w0rld_m41n.php">
 				      <i class="menu-icon fa fa-tachometer"></i>
@@ -51,7 +51,7 @@ include("val/m3g4w0rld_1nv3nt0ry_v4l.php");
 				    <b class="arrow"></b>
 				  </li>
 
-					<?php if ($adm1n === $m364_p051t10n) { ?>
+
 
 				  <li class="">
 				    <a href="#" class="dropdown-toggle">
@@ -80,18 +80,7 @@ include("val/m3g4w0rld_1nv3nt0ry_v4l.php");
 				    </ul>
 				  </li>
 
-					<?php } ?>
-
-
-				  <li class="active">
-				    <a href="m3g4w0rld_1nv3nt0ry.php">
-				      <i class="menu-icon fa fa-list"></i>
-				      <span class="menu-text"> Employees Inventory </span>
-				    </a>
-				    <b class="arrow"></b>
-				  </li>
-
-				  <li class="">
+					<li class="">
 				    <a href="#" class="dropdown-toggle">
 				      <i class="menu-icon fa fa-file-o"></i>
 				      <span class="menu-text">
@@ -102,7 +91,7 @@ include("val/m3g4w0rld_1nv3nt0ry_v4l.php");
 
 				    <b class="arrow"></b>
 
-						<ul class="submenu">
+				    <ul class="submenu">
 				      <li class="">
 				        <a href="m3g4w0rld_u553r5_1065.php">
 				          <i class="menu-icon fa fa-caret-right"></i>
@@ -121,6 +110,18 @@ include("val/m3g4w0rld_1nv3nt0ry_v4l.php");
 				    </ul>
 
 				  </li>
+
+				 <?php } ?>
+
+				  <li class="active">
+				    <a href="m3g4w0rld_1nv3nt0ry.php">
+				      <i class="menu-icon fa fa-list"></i>
+				      <span class="menu-text"> Employees Inventory </span>
+				    </a>
+				    <b class="arrow"></b>
+				  </li>
+
+
 				</ul><!-- /.nav-list -->
 
 
