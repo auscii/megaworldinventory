@@ -110,7 +110,7 @@ include("val/m3g4w0rld_1nv3nt0ry_v4l.php");
 				        </a>
 				        <b class="arrow"></b>
 				      </li>
-
+							
 				      <li class="">
 				        <a href="m3g4w0rld_4ct1v1ty_1065.php">
 				          <i class="menu-icon fa fa-caret-right"></i>
@@ -152,43 +152,23 @@ include("val/m3g4w0rld_1nv3nt0ry_v4l.php");
 						<div class="row">
 							<div class="col-xs-12">
 								<h3 class="header smaller lighter blue">User Logs</h3>
+								<!--Van was here-->
+								<form name='pr_form' id='pr_form' action='val/m3g4w0rld_u553r5_v4l_pr1nt.php' method='GET' target='_blank'>
+								<input type='hidden' name='sdate' id='pr_sdate'>
+								<input type='hidden' name='stime' id='pr_stime'>
+								<input type='hidden' name='pr' id='pr' value=1>
+								<button id='pr_btn' class='btn btn-primary' disabled> Print <span  class='glyphicon glyphicon-print'></span></button>
+								</form>
 
-											<table id="dynamic-table" class="table table-striped table-bordered table-hover text-top-5x">
-												<thead>
-													<tr>
-														<th class="text-center">ID</th>
-														<th class="text-center">User</th>
-														<th class="text-center">Action</th>
-														<th class="text-center">Date Established</th>
-														<th class="text-center">Time Established</th>
-													</tr>
-												</thead>
-												<tbody>
-													<?php
-												  $m3g4w0rld_4ct1v1ty_c0unt = 0;
-											    $xcon->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-											    $result = $xcon->prepare("SELECT * FROM u53r_1065");
-											    $result->execute();
-											        while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
-												          $m3g4w0rld_4ct1v1ty_c0unt++;
-											            $m3g4w0rld_u53r_id = $row['u53r_id'];
-											            $m3g4w0rld_u53r_user = $row['u53r_user'];
-											            $m3g4w0rld_u53r_action = $row['u53r_action'];
-											            $m3g4w0rld_u53r_date = $row['u53r_date'];
-																	$m3g4w0rld_u53r_new_date = date('F d, Y',strtotime($m3g4w0rld_u53r_date));
-																	$m3g4w0rld_u53r_new_time = date('g:i A',strtotime($m3g4w0rld_u53r_date));
-
-											    ?>
-													<tr>
-														<td class="text-center"><?php echo $m3g4w0rld_u53r_id; ?></td>
-														<td class="text-center"><?php echo $m3g4w0rld_u53r_user; ?></td>
-														<td class="text-center"><?php echo $m3g4w0rld_u53r_action; ?></td>
-														<td class="text-center"><?php echo $m3g4w0rld_u53r_new_date; ?></td>
-														<td class="text-center"><?php echo $m3g4w0rld_u53r_new_time; ?></td>
-													</tr>
-												</tbody>
-											<?php } ?>
-											</table>
+								<label class='pull-right'><input type='radio' class="custom-control-input" name='sort' id='time' >Time</label>
+								<label class='pull-right'><input type='radio' class="custom-control-input" name='sort' id='date' checked >Date</label><span class='pull-right'>
+								
+								<input type='date' id='sdate' name='date'>
+								<input type='time' id='stime' name='time'>
+								<button id='search' class>Search</button></span>
+								<div id='table'></div>
+								<!--Van was here-->
+											
 									</div>
 								</div>
 							</div>
@@ -461,6 +441,68 @@ include("val/m3g4w0rld_1nv3nt0ry_v4l.php");
 				<script src="../assets/js/buttons.colVis.min.js"></script>
 				<script src="../assets/js/dataTables.select.min.js"></script>
 
+				<script>
+					$(document).ready(function(){
+						
+						if($('#date').prop('checked')==true){
+								$('#sdate').show();
+								$('#stime').hide();
+							}else if($('#time').prop('checked')==true){
+								$('#sdate').hide();
+								$('#stime').show();
+							}else{
+								$('#datesearch').html("No Picker");
+							}
 
+						$(':radio').on('click',function(){
+							$('#pr_btn').attr('disabled',true);
+							$('#table').html('');
+							if($('#date').prop('checked')==true){
+								$('#sdate').show();
+								$('#stime').hide();
+								$('#stime').val('');
+							}else if($('#time').prop('checked')==true){
+								$('#sdate').hide();
+								$('#sdate').val('');
+								$('#stime').show();
+							}else{
+								$('#datesearch').html("No Picker");
+							}
+						});
+						
+						$('#sdate').on('change', function(){
+							$('#pr_btn').attr('disabled',true);
+						});
+						$('#stime').on('change', function(){
+							$('#pr_btn').attr('disabled',true);
+						});
+
+						$('#search').on('click',function(){
+						var $sdate=  $('#sdate').val();
+						var $stime=  $('#stime').val();
+						if($sdate!=''||$stime!=''){
+							$('#pr_sdate').val($sdate);
+							$('#pr_stime').val($stime);
+							$('#pr_btn').attr('disabled',false);
+							$.ajax({
+								url: 'val/m3g4w0rld_l04d_u53r5_t4bl3.php',
+								type: 'GET',
+								data: {sdate:$sdate,stime:$stime},
+								beforeSend: function(){
+									$('#table').html('Load....');
+								},
+								success: function(s){
+									$('#table').html(s);
+								},
+								error: function(e){
+									$('#table').html(e);
+								}
+								});
+						}
+						
+						});
+					});
+						
+				</script>
 	</body>
 </html>
