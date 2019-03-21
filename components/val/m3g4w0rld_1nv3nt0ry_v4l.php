@@ -180,6 +180,24 @@ if (!empty($_POST['emp_search'])) {
 }
 
 
+if(!empty($_GET['sdate'])){
+    $sdate = $_GET['sdate'];
+} else {
+    $sdate = "";
+}
+
+if(!empty($_GET['stime'])){
+    $stime = $_GET['stime'];
+} else {
+    $stime = "";
+}
+if(!empty($_GET['pr'])){
+    $pr_tbl = 1;
+} else {
+    $pr_tbl = "";
+}
+
+
 
 
 if (isset($_POST['invensubm1t_01010101'])) {
