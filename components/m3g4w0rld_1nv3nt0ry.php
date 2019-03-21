@@ -195,10 +195,11 @@ include("val/m3g4w0rld_1nv3nt0ry_v4l.php");
 															 																					   empl0y335_age, empl0y335_bdate, empl0y335_email, empl0y335_contact,
 																																					 empl0y335_address, empl0y335_country, empl0y335_status, empl0y335_date, empl0y335_creator_no,
 																																					 CONCAT(LEFT (empl0y335_fname, 3), '', RIGHT (empl0y335_lname, 3)) AS empl0y335_search_name
-																																	  FROM 3mpl0y335 WHERE empl0y335_creator_no = $m364_1d AND
+																																	  FROM 3mpl0y335 WHERE
 																																		empl0y335_fname LIKE ?
 																																		OR empl0y335_lname LIKE ?
 																																		OR CONCAT(LEFT (empl0y335_fname, 3), '', RIGHT (empl0y335_lname, 3)) LIKE ?");
+																																		// WHERE empl0y335_creator_no = $m364_1d
 
 															$m3g4w0rld_5t5t3m3nt->execute(array("%$emp_search%","%$emp_search%","%$emp_search%"));
 															$m3g4w0rld_534arch_result = $m3g4w0rld_5t5t3m3nt->fetchAll();
@@ -224,7 +225,7 @@ include("val/m3g4w0rld_1nv3nt0ry_v4l.php");
 																					$empl0y335_search_name = $row['empl0y335_search_name'];
 																					$empl0y335_creator_no = $row['empl0y335_creator_no'];
 
-													if ($empl0y335_creator_no === $m364_1d) {
+													// if ($empl0y335_creator_no === $m364_1d) {
 											    ?>
 													<tr>
 														<td class="text-center"><?php echo $m3g4w0rld_empl0y335_id; ?></td>
@@ -233,34 +234,42 @@ include("val/m3g4w0rld_1nv3nt0ry_v4l.php");
 														<td class="text-center"><?php echo $m3g4w0rld_empl0y335_bdate; ?></td>
 														<td class="text-center"><?php echo $m3g4w0rld_empl0y335_age; ?></td>
 														<td class="text-center"><?php echo $m3g4w0rld_empl0y335_contact; ?></td>
-														<td class="text-center">
-															<div class="hidden-sm hidden-xs action-buttons">
-																<a class="blue" title="Edit"
-															     href="#addModal" role="button" data-toggle="modal"
-															   	 onclick="editEmployee('<?php echo $row['empl0y335_id'] ; ?>',
-																												 '<?php echo $row['empl0y335_fname'] ?>',
-																												 '<?php echo $row['empl0y335_mname'] ?>',
-																												 '<?php echo $row['empl0y335_lname'] ?>',
-																												 '<?php echo $row['empl0y335_age'] ?>',
-																												 '<?php echo $row['empl0y335_bdate'] ?>',
-																												 '<?php echo $row['empl0y335_email'] ?>',
-																												 '<?php echo $row['empl0y335_contact'] ?>',
-																												 '<?php echo $row['empl0y335_address'] ?>',
-																												 '<?php echo $row['empl0y335_country'] ?>');"
-																>
-																	<i class="ace-icon fa fa-eye bigger-130"></i>
-																</a>
-																<a class="red" title="Delete"
-																	 href="#deleteModal" role="button" data-toggle="modal"
-															   	 onclick="deleteEmployee('<?php echo $row['empl0y335_id']; ?>','<?php echo $fullName; ?>');"
-																	 >
-																	<i class="ace-icon fa fa-trash-o bigger-130"></i>
-																</a>
-															</div>
-														</td>
+														<?php if ($empl0y335_creator_no === $m364_1d) { ?>
+																<td class="text-center">
+																	<div class="hidden-sm hidden-xs action-buttons">
+																		<a class="blue" title="Edit"
+																	     href="#addModal" role="button" data-toggle="modal"
+																	   	 onclick="editEmployee('<?php echo $row['empl0y335_id'] ; ?>',
+																														 '<?php echo $row['empl0y335_fname'] ?>',
+																														 '<?php echo $row['empl0y335_mname'] ?>',
+																														 '<?php echo $row['empl0y335_lname'] ?>',
+																														 '<?php echo $row['empl0y335_age'] ?>',
+																														 '<?php echo $row['empl0y335_bdate'] ?>',
+																														 '<?php echo $row['empl0y335_email'] ?>',
+																														 '<?php echo $row['empl0y335_contact'] ?>',
+																														 '<?php echo $row['empl0y335_address'] ?>',
+																														 '<?php echo $row['empl0y335_country'] ?>');"
+																		>
+																			<i class="ace-icon fa fa-eye bigger-130"></i>
+																		</a>
+																		<a class="red" title="Delete"
+																			 href="#deleteModal" role="button" data-toggle="modal"
+																	   	 onclick="deleteEmployee('<?php echo $row['empl0y335_id']; ?>','<?php echo $fullName; ?>');"
+																			 >
+																			<i class="ace-icon fa fa-trash-o bigger-130"></i>
+																		</a>
+																	</div>
+																</td>
+															<?php } else { ?>
+																<td class="text-center">
+																	<div class="hidden-sm hidden-xs action-buttons">
+																		----------
+																	</div>
+																</td>
+															<?php } ?>
 													</tr>
 												</tbody>
-											<?php } } } }
+											<?php } } } //}
 											//else { ?>
 											</table>
 
