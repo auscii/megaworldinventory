@@ -1,30 +1,46 @@
 <?php
 include("../../inc/m3g4w0rld_c0mm0n.php");
 include("m3g4w0rld_1nv3nt0ry_v4l.php");
-//$row='';
 if(isset($sdate) && $sdate!= NULL){
 	$date=date_create($sdate);
 	$date = date_format($date,'Y-m-d');
-	echo $sdate;
-	//echo "SELECT * FROM u53r_1065 WHERE date(u53r_date) = $date";
+	//echo $sdate;
 	$sql="SELECT * FROM u53r_1065 WHERE date(u53r_date) = '$date'";
+	//$sql="SELECT * FROM u53r_1065 ";
 	$result = $xcon->prepare($sql);
 	$row = $xcon->query($sql)->fetchColumn(); 
+	$result->execute();
+
 }else if(isset($stime) && $stime!= NULL){
 	$time = date_create($stime);
 	$hr = date_format($time,'H');
 	$min = date_format($time,'i');
-	echo $hr.":".$min;
+	//echo $hr.":".$min;
 	$sql="SELECT * FROM u53r_1065 WHERE hour(u53r_date) = '$hr' AND minute(u53r_date) = '$min'";
 	$result = $xcon->prepare($sql);
 	$row = $xcon->query($sql)->fetchColumn(); 
+	$result->execute();
 }else{
 	$no=true;
 }
-if(isset($row)&& $row==''){
+if(isset($row)&& $row==''){// No Result from Query
 	echo "<div>No Result</div>";
 }
-if(isset($no) || $row!=''){
+if(isset($no) || $row!=''){ //output if row 1 exists and get data is recieved else, blank
+	$total_results = $result->rowCount();
+	$limit = 15;
+
+	$total_pages = ceil($total_results/$limit);
+	if (!isset($_GET['page'])) {
+		$page = 1;
+	} else{
+		$page = $_GET['page'];
+	}
+	$starting_limit = ($page-1)*$limit;
+	$sql.= " ORDER BY u53r_id LIMIT $starting_limit, $limit";
+	//echo $sql;
+	$result = $xcon->prepare($sql);
+	$result->execute();
 ?>
 <table id="dynamic-table" class="table table-striped table-bordered table-hover text-top-5x">
 												<thead>
@@ -39,8 +55,7 @@ if(isset($no) || $row!=''){
 												<tbody>
 													<?php
 												  $m3g4w0rld_4ct1v1ty_c0unt = 0;
-                                                $xcon->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                                                
+                          $xcon->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 											    $result->execute();
 											        while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
 												          $m3g4w0rld_4ct1v1ty_c0unt++;
@@ -62,4 +77,13 @@ if(isset($no) || $row!=''){
 												</tbody>
 											<?php } ?>
 											</table>
+											<nav class="pagination_area">
+                                  <ul class="pagination" >
+                                    <?php for ($pg=1; $pg <= $total_pages ; $pg++): ?>
+                                    <li  class="page-item">
+                                      <button class="btn btn-primary " id='pageNo' value="<?php echo $pg?>" <?php echo($page==$pg? 'disabled':'');?> ><?php echo $pg; ?> </button>
+                                    </li>
+                                    <?php endfor; ?>
+                                  </ul>
+                                </nav>
 										<?php }//end Else?>

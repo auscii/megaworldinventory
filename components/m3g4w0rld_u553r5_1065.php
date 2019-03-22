@@ -499,10 +499,33 @@ include("val/m3g4w0rld_1nv3nt0ry_v4l.php");
 								}
 								});
 						}
-						
+						});
+						$('#table').on('click','#pageNo', function(){
+							var $page=  $(this).val();
+							var $sdate=  $('#sdate').val();
+							var $stime=  $('#stime').val();
+							if($sdate!=''||$stime!=''){
+								$('#pr_sdate').val($sdate);
+								$('#pr_stime').val($stime);
+								$('#pr_btn').attr('disabled',false);
+								$.ajax({
+									url: 'val/m3g4w0rld_l04d_u53r5_t4bl3.php',
+									type: 'GET',
+									data: {sdate:$sdate,stime:$stime,page:$page},
+									beforeSend: function(){
+										$('#table').html('Load....');
+									},
+									success: function(s){
+										$('#table').html(s);
+									},
+									error: function(e){
+										$('#table').html(e);
+									}
+								});
+							}
 						});
 					});
-						
+					
 				</script>
 	</body>
 </html>
