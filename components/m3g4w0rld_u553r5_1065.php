@@ -153,20 +153,21 @@ include("val/m3g4w0rld_1nv3nt0ry_v4l.php");
 							<div class="col-xs-12">
 								<h3 class="header smaller lighter blue">User Logs</h3>
 								<!--Van was here-->
+
+								<label class=''><input type='radio' class="form-control-input" name='sort' id='date' checked >Date</label>
+								<label class=''><input type='radio' class="form-control-input" name='sort' id='time' >Time</label>
+								<br>
+								<input type='date' class='text-center col-sm-2 form-control-sm' id='sdate' name='date'>
+								<input type='time' class='text-center col-sm-2 form-control-sm' id='stime' name='time'>
+								<button id='search' class='btn btn-success'>Search</button>
+								<div id='table'></div><br>
 								<form name='pr_form' id='pr_form' action='val/m3g4w0rld_u553r5_v4l_pr1nt.php' method='GET' target='_blank'>
 								<input type='hidden' name='sdate' id='pr_sdate'>
 								<input type='hidden' name='stime' id='pr_stime'>
+								<input type='hidden' name='page' id='pgNo'>
 								<input type='hidden' name='pr' id='pr' value=1>
 								<button id='pr_btn' class='btn btn-primary' disabled> Print <span  class='glyphicon glyphicon-print'></span></button>
 								</form>
-
-								<label class='pull-right'><input type='radio' class="custom-control-input" name='sort' id='time' >Time</label>
-								<label class='pull-right'><input type='radio' class="custom-control-input" name='sort' id='date' checked >Date</label><span class='pull-right'>
-								
-								<input type='date' id='sdate' name='date'>
-								<input type='time' id='stime' name='time'>
-								<button id='search' class>Search</button></span>
-								<div id='table'></div>
 								<!--Van was here-->
 											
 									</div>
@@ -489,10 +490,11 @@ include("val/m3g4w0rld_1nv3nt0ry_v4l.php");
 								type: 'GET',
 								data: {sdate:$sdate,stime:$stime},
 								beforeSend: function(){
-									$('#table').html('Load....');
+									$('#table').html('Loading...');
 								},
 								success: function(s){
 									$('#table').html(s);
+									$('#pgNo').val(1);
 								},
 								error: function(e){
 									$('#table').html(e);
@@ -513,10 +515,11 @@ include("val/m3g4w0rld_1nv3nt0ry_v4l.php");
 									type: 'GET',
 									data: {sdate:$sdate,stime:$stime,page:$page},
 									beforeSend: function(){
-										$('#table').html('Load....');
+										$('#table').html('Loading...');
 									},
 									success: function(s){
 										$('#table').html(s);
+										$('#pgNo').val($page);
 									},
 									error: function(e){
 										$('#table').html(e);
