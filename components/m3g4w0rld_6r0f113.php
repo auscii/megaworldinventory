@@ -166,10 +166,33 @@ include("val/m3g4w0rld_m41n_v4l.php");
 													</a>
 												</div>
 											</div>
+
+										</div>
+										<div class="space-6"></div>
+
+										<div class="profile-contact-links align-left">
+													<a href="#profileModal"
+													   onclick="editProfile('<?php echo $m364_1d; ?>',
+																									'<?php echo $m364_fname; ?>',
+																									'<?php echo $m364_mname; ?>',
+																									'<?php echo $m364_lname; ?>',
+																									'<?php echo $m364_c0nt4ct; ?>',
+																									'<?php echo $m364_3m41l; ?>');"
+														 role="button"
+														 data-toggle="modal"
+														 class="btn btn-link">
+														<i class="ace-icon fa fa-pencil bigger-120 green"></i> Edit Profile
+													</a>
+
+													<a onclick="changePassProfile('<?php echo $m364_1d; ?>');"
+											       href="#changePassModal" role="button" data-toggle="modal" class="btn btn-link">
+														<i class="ace-icon fa fa-lock bigger-120 pink"></i> &nbsp;Change Password
+													</a>
 										</div>
 
-										<div class="space-6"></div>
-									</div>
+										<br />
+
+
 
 								</div><!-- /.row -->
 
@@ -254,12 +277,172 @@ include("val/m3g4w0rld_m41n_v4l.php");
 				</div>
 			</div>
 
+
+			<div id="changePassModal" class="modal fade" tabindex="-1">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+							<h3 class="smaller lighter blue no-margin">Change Password of <?php echo $m364_fname . " " . $m364_lname; ?></h3>
+						</div>
+
+						<form method="POST" id="userForm">
+
+							<input type="hidden" name="m3g4w0rld_ch4nge_5t4tu5" id="m3g4w0rld_ch4nge_5t4tu5" />
+							<input type="hidden" name="m3g4w0rld_ch4nge_k3y" id="m3g4w0rld_ch4nge_k3y" />
+
+								<div class="modal-body" style="margin: auto; text-align: center;">
+
+									<div class="form-group has-info bottom-space-10" id="bottom-space-10">
+										<label for="inputInfo" class="col-xs-12 col-sm-3 control-label no-padding-right">New Password</label>
+											<div class="col-xs-12 col-sm-5">
+												<span class="block input-icon input-icon-right">
+													<input type="password" id="m3g4_ch4ng3_new_pa55" name="m3g4_ch4ng3_new_pa55" placeholder="Enter New Password" style="width: 350px;" />
+												</span>
+											</div>
+									</div> <br />
+
+									<div class="form-group has-info" id="bottom-space-10">
+										<label for="inputInfo" class="col-xs-12 col-sm-3 control-label no-padding-right">Confirm Password</label>
+												<div class="col-xs-12 col-sm-5">
+													<span class="block input-icon input-icon-right">
+															<input type="password" id="m3g4_ch4ng3_c0nfirm_pa55" name="m3g4_ch4ng3_c0nfirm_pa55" placeholder="Re-enter Password" style="width: 350px;" />
+													</span>
+												</div>
+									 </div> <br />
+
+									</div>
+
+									<div class="modal-footer" style="margin: auto; text-align: center;">
+										<button type="submit" name="invensubm1t_01010101" class="btn btn-sm btn-success">
+											<i class="ace-icon fa fa-check"></i>
+											Submit
+										</button> &nbsp; &nbsp;
+										<button class="btn btn-sm btn-primary" data-dismiss="modal">
+											<i class="ace-icon fa fa-times"></i>
+											Cancel
+										</button>
+									</div>
+
+								</form>
+
+							</div><!-- /.modal-content -->
+						</div><!-- /.modal-dialog -->
+					</div>
+
+			<div id="profileModal" class="modal fade" tabindex="-1">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+							<h3 class="smaller lighter blue no-margin">Edit Profile of <?php echo $m364_fname . " " . $m364_lname; ?></h3>
+						</div>
+
+						<form method="POST" id="userForm">
+
+							<input type="hidden" name="m3g4w0rld_editprofile_5t4tu5" id="m3g4w0rld_editprofile_5t4tu5" />
+							<input type="hidden" name="m3g4w0rld_editprofile_k3y" id="m3g4w0rld_editprofile_k3y" />
+
+								<div class="modal-body" style="margin: auto; text-align: center;">
+
+									<div class="form-group has-info bottom-space-10" id="bottom-space-10">
+										<label for="inputInfo" class="col-xs-12 col-sm-3 control-label no-padding-right">Username</label>
+											<div class="col-xs-12 col-sm-5">
+												<span class="block input-icon input-icon-right">
+													<input type="text" id="" name="" value="<?php echo $m364_uname; ?>" style="width: 350px;" disabled />
+												</span>
+											</div>
+									</div> <br />
+
+									<div class="form-group has-info" id="bottom-space-10">
+										<label for="inputInfo" class="col-xs-12 col-sm-3 control-label no-padding-right">First Name</label>
+												<div class="col-xs-12 col-sm-5">
+													<span class="block input-icon input-icon-right">
+															<input type="text" id="edit_pr0f1l3_fname" name="edit_pr0f1l3_fname" value="<?php echo $m364_fname; ?>" style="width: 350px;" />
+													</span>
+												</div>
+									 </div> <br />
+
+									<div class="form-group has-info" id="bottom-space-10">
+										<label for="inputInfo" class="col-xs-12 col-sm-3 control-label no-padding-right">Middle Name</label>
+										<div class="col-xs-12 col-sm-5">
+											<span class="block input-icon input-icon-right">
+												<input type="text" id="edit_pr0f1l3_mname" name="edit_pr0f1l3_mname" value="<?php echo $m364_mname; ?>" style="width: 350px;" />
+											</span>
+										</div>
+									</div> <br />
+
+									<div class="form-group has-info" id="bottom-space-10">
+										<label for="inputInfo" class="col-xs-12 col-sm-3 control-label no-padding-right">Last Name</label>
+										<div class="col-xs-12 col-sm-5">
+											<span class="block input-icon input-icon-right">
+												<input type="text" id="edit_pr0f1l3_lname" name="edit_pr0f1l3_lname" value="<?php echo $m364_lname; ?>" style="width: 350px;" />
+											</span>
+										</div>
+									</div> <br />
+
+										<div class="form-group has-info" id="bottom-space-10">
+											<label for="inputInfo" class="col-xs-12 col-sm-3 control-label no-padding-right">Contact No.</label>
+											<div class="col-xs-12 col-sm-5">
+												<span class="block input-icon input-icon-right">
+													<input type="number" id="edit_pr0f1l3_contact" name="edit_pr0f1l3_contact" value="<?php echo $m364_c0nt4ct; ?>" style="width: 350px;" />
+												</span>
+											</div>
+										</div> <br />
+
+										<div class="form-group has-info" id="bottom-space-10">
+											<label for="inputInfo" class="col-xs-12 col-sm-3 control-label no-padding-right">Email Address</label>
+											<div class="col-xs-12 col-sm-5">
+												<span class="block input-icon input-icon-right">
+													<input type="email" id="edit_pr0f1l3_email" name="edit_pr0f1l3_email" value="<?php echo $m364_3m41l; ?>" style="width: 350px;"  />
+												</span>
+											</div>
+										</div> <br />
+
+
+
+									</div>
+
+									<div class="modal-footer" style="margin: auto; text-align: center;">
+										<button type="submit" name="edit_profile_submit" class="btn btn-sm btn-success">
+											<i class="ace-icon fa fa-check"></i>
+											Submit
+										</button> &nbsp; &nbsp;
+										<button class="btn btn-sm btn-primary" data-dismiss="modal">
+											<i class="ace-icon fa fa-times"></i>
+											Cancel
+										</button>
+									</div>
+
+								</form>
+
+							</div><!-- /.modal-content -->
+						</div><!-- /.modal-dialog -->
+					</div>
+
 			<a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
 				<i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
 			</a>
 		</div><!-- /.main-container -->
 
 		<script src="../assets/js/jquery-2.1.4.min.js"></script>
+		<script>
+			function editProfile(key,fname,mname,lname,contact,email){
+					$("#m3g4w0rld_editprofile_5t4tu5").val("editprofileset") ;
+					$("#m3g4w0rld_editprofile_k3y").val(key) ;
+					$("#edit_pr0f1l3_fname").val(fname) ;
+					$("#edit_pr0f1l3_mname").val(mname) ;
+					$("#edit_pr0f1l3_lname").val(lname) ;
+					$("#edit_pr0f1l3_contact").val(contact) ;
+					$("#edit_pr0f1l3_email").val(email) ;
+			}
+
+			function changePassProfile(key){
+					$("#m3g4w0rld_ch4nge_5t4tu5").val("changepassworduser") ;
+					$("#m3g4w0rld_ch4nge_k3y").val(key) ;
+			}
+		</script>
+
 		<script type="text/javascript">
 			if('ontouchstart' in document.documentElement) document.write("<script src='../assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
 		</script>
